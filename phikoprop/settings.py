@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$#+zpjzn^80*&p+ex7gtp3@^&dz8==nu)py27@22-py0@v$j_z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 AUTH_USER_MODEL = 'accounts.Account'
 AUTHENTICATION_BACKENDS = ['accounts.utilities.backends.EmailBackend']
 LOGIN_URL = 'accounts:login'
@@ -133,11 +133,11 @@ else:
     DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql',
-                'NAME': "phikopropdb",
-                # 'USER': config("DB_USER"),
-                # 'PASSWORD': config("DB_PASSWORD"),
-                # 'HOST': config("DB_HOST",'localhost'),
-                # 'PORT': '',
+                'NAME': "phikopropertiesdb",
+                'USER': config("DB_USER"),
+                'PASSWORD': config("DB_PASSWORD"),
+                'HOST': config("DB_HOST",'localhost'),
+                'PORT': '',
             }
         }
 
