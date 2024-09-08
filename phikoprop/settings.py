@@ -28,11 +28,11 @@ DEBUG = False
 AUTH_USER_MODEL = 'accounts.Account'
 AUTHENTICATION_BACKENDS = ['accounts.utilities.backends.EmailBackend']
 LOGIN_URL = 'accounts:login'
-ADMINS = [('admin@phikoproperties.co.za'),( 'support@phikoproperties.co.za'), ('gumedethomas12@gmail.com') ]
-MANAGERS = [('admin@phikoproperties.co.za'), ('support@phikoproperties.co.za'), ('gumedethomas12@gmail.com') ]
+ADMINS = [('admin@wedodev.site'),( 'support@wedodev.site'), ('gumedethomas12@gmail.com') ]
+MANAGERS = [('admin@wedodev.site'), ('support@wedodev.site'), ('gumedethomas12@gmail.com') ]
 
 # Security
-CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1', 'https://localhost', 'https://phikoproperties.co.za', 'https://www.phikoproperties.co.za']
+CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1', 'https://localhost', 'https://wedodev.site', 'https://www.wedodev.site']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ['security.W019']
@@ -51,7 +51,7 @@ else:
     SECURE_HSTS_PRELOAD = True
 
     # Allowed Hosts
-    ALLOWED_HOSTS = ['phikoproperties.co.za', 'www.phikoproperties.co.za']
+    ALLOWED_HOSTS = ['wedodev.site', 'www.wedodev.site']
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
