@@ -1,0 +1,136 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #hero-section {
+        background-image: url("{% static 'imgs/hero/hero-section.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+</style>
+{% endblock styles %}
+{% block content %}
+<!-- Banner -->
+<section class="section-banner">
+    <div id="hero-section"
+        class="banner-image flex flex-wrap w-full justify-center sm:h-[400px] h-[300px] m-0 bg-cover bg-bottom">
+        <div class="w-full sm:h-[400px] h-[300px] absolute bg-[#000000bf]"></div>
+        <div class="flex items-center justify-center text-center z-2">
+            <div class="mt-[65px]">
+                <h2
+                    class="mb-3 2xl:text-[40px] xl:text-[38px] lg:text-[36px] md:text-[34px] sm:text-[30px] text-[28px] font-bold">
+                    Room Details</h2>
+                <h5 class="text-[16px]">
+                    <span>
+                        <a href="{% url 'prop_home:prop-home' %}" class="text-white hover:text-white">Home</a>
+                    </span>
+                    <span class="font-bold"> / </span>
+                    <span>
+                        <a href="javascript:void(0)" class="text-white hover:text-white">Room Details</a>
+                    </span>
+                </h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Room-detsils -->
+<section class="section-room-detsils xl:py-[100px] py-[70px]">
+    <div
+        class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+        <div class="flex flex-wrap w-full mb-[-24px]">
+            <div class="lg:w-8/12 w-full px-3 mb-6" data-aos="fade-up" data-aos-duration="2000">
+                <div class="lh-room-details">
+                    <div class="lh-main-room w-full">
+                        <div class="slider slider-for !mb-6">
+                            <div class="lh-room-details-image"><img src="{% static 'imgs/room/room-1.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-1"></div>
+                            <div class="lh-room-details-image"><img src="{% static 'imgs/room/room-2.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-2"></div>
+                            <div class="lh-room-details-image"><img src="{% static 'imgs/room/room-3.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-3"></div>
+                            <div class="lh-room-details-image"><img src="{% static 'imgs/room/room-4.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-4"></div>
+                            <div class="lh-room-details-image"><img src="{% static 'imgs/room/room-5.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-5"></div>
+                        </div>
+                        <div class="slider slider-nav !mb-6">
+                            <div class="lh-room-details-inner"><img src="{% static 'imgs/room/room-1.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-1"></div>
+                            <div class="lh-room-details-inner"><img src="{% static 'imgs/room/room-2.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-2"></div>
+                            <div class="lh-room-details-inner"><img src="{% static 'imgs/room/room-3.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-3"></div>
+                            <div class="lh-room-details-inner"><img src="{% static 'imgs/room/room-4.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-4"></div>
+                            <div class="lh-room-details-inner"><img src="{% static 'imgs/room/room-5.png' %}"
+                                    class="w-full rounded-[15px]" alt="room-5"></div>
+                        </div>
+                    </div>
+                    <div class="lh-room-details-contain pt-0">
+                        <h4
+                            class="lh-room-details-contain-heading text-black py-[10px] font-bold lg:text-[30px] md:text-[28px] sm:text-[26px] text-6">
+                            Luxurious Room</h4>
+                            <div class="lh-room-size d-flex flex-wrap">
+                                <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">1500 sq.ft <span class="px-[15px]">|</span></p>
+                                <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">2 king Bed <span class="px-[15px]">|</span></p>
+                                <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">Up to 8 Guest</p>
+                            </div>
+                        <p class="pt-[10px]">This is the dolor sit amet consectetur, adipisicing elit. Quis
+                            asperiores exercitationem
+                            non placeat esse. Quasi ipsam tenetur quaerat blanditiis corrupti.</p>
+                        
+                        <div class="lh-room-details-rules pt-6">
+                            <div class="lh-room-rules">
+                                <h4
+                                    class="text-lg text-black font-bold border-b border-solid border-custom-bg pb-[10px]">
+                                    Rules & Regulation</h4>
+                                <div class="lh-cols-room pt-[15px]">
+                                    <ul>
+                                        <li class="flex pb-[10px]"><code
+                                                class="text-[17px] text-custom-primary pr-[5px]">*</code>No smoking and drinking in side
+                                            the room</li>
+                                        <li class="flex pb-[10px]"><code
+                                                class="text-[17px] text-custom-primary pr-[5px]">*</code>Visitors not allowed from 22h00</li>
+                                        
+                                        
+                                        <li class="flex pb-[10px]"><code
+                                                class="text-[17px] text-custom-primary pr-[5px]">*</code>No Pets</li>
+                                        <li class="flex"><code
+                                                class="text-[17px] text-custom-primary pr-[5px]">*</code>Indentification
+                                            document is must for hotel registration.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-4/12 w-full  px-3 mb-6" data-aos="fade-up" data-aos-duration="3000">
+                <div class="lh-side-room bg-[#f7f5f1] rounded-[15px] sticky top-[80px]">
+                    <div class="lh-side-reservation pt-0 pr-6 pl-6 pb-6">
+                        <div>
+                            
+                            <div class="lh-side-reservation-from relative">
+                                <h4 class="text-black text-lg pb-[15px] font-bold leading-[16px]">Your Price</h4>
+                                <span>R1000 / per month</span>
+                            </div>
+                            <div class="lh-side-reservation-from relative">
+                                <div class="lh-side-reservation-from-buttons d-flex pt-6">
+                                    <a href="{% url 'rooms:room-application' room_id='apply-for-room' %}" class="duration-[0.3s] ease-in-out border-[1px] border-solid border-custom-h px-[15px] py-[5px] leading-[28px] bg-custom-h text-white relative z-[2] text-[15px] font-medium tracking-[1px] rounded-[10px] hover:bg-inherit hover:!text-custom-h"
+                                        href="">
+                                        Apply Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

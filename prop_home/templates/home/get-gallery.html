@@ -1,0 +1,124 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #hero-section {
+        background-image: url("{% static 'imgs/about/about-banner.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+
+    #bout-bg::before {
+        background-image: url("{% static 'imgs/theme/6.png' %}");
+    }
+
+    #about-bg-2::before {
+        background-image: url("{% static 'imgs/theme/1.png' %}");
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<!-- Banner -->
+<section class="section-banner">
+    <div id="hero-section"
+        class="banner-image flex flex-wrap w-full justify-center sm:h-[400px] h-[300px] m-0 bg-cover bg-bottom">
+        <div class="w-full sm:sm:h-[400px] h-[300px] absolute bg-[#000000bf]"></div>
+        <div class="flex items-center justify-center text-center z-2">
+            <div class="mt-[65px]">
+                <h2
+                    class="mb-[12px] 2xl:text-[40px] xl:text-[38px] lg:text-[36px] md:text-[34px] sm:text-[30px] text-[28px] font-bold">
+                    Gallery</h2>
+                <h5 class="text-[16px]">
+                    <span>
+                        <a href="{% url 'prop_home:prop-home' %}" class="text-[#fff] hover:text-[#fff]">Home</a>
+                    </span>
+                    <span class="font-bold"> / </span>
+                    <span>
+                        <a href="javascript:void(0)" class="text-[#fff] hover:text-[#fff]">Gallery</a>
+                    </span>
+                </h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="section-gallery xl:py-[100px] py-[70px]">
+    <div
+        class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] px-[12px]">
+        <div class="text-center w-full mb-[30px]">
+            <h2
+                class="text-[#000] font-medium leading-[1.2] 2xl:text-[40px] xl:text-[35px] xl:pb-0 lg:text-[30px] md:text-[28px] sm:text-[26px] text-[22px]">
+                Latest <span class="text-custom-primary">Gallery</span>
+            </h2>
+        </div>
+        <div class="lg:flex flex-wrap mb-[-24px] w-full" data-aos="fade-up" data-aos-duration="1500">
+            <div class="card-columns lg:columns-4 columns-2 max-[480px]:columns-1 gap-[24px] w-full">
+                <figure class="magnific-img mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_1.jpg' %}" title="Mobile App">
+                        <img class="example-image" src="{% static 'imgs/gallery/gallery_img_thumb_1.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_5.jpg' %}" title="Template Project">
+                        <img class="example-image" src="{% static 'imgs/gallery/gallery_img_thumb_5.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_9.jpg' %}" title="Wordpress Development">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_9.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_2.jpg' %}" title="Magento Project">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_2.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_6.jpg' %}" title="Mobile App">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_6.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_10.jpg' %}" title="Template Project">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_10.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_3.jpg' %}" title="Web Development">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_3.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_7.jpg' %}" title="Shopify Project">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_7.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_11.jpg' %}" title="Prestashop site">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_11.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_4.jpg' %}" title="Python Development">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_4.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_8.jpg' %}" title="HTML Project">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_8.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+                <figure class="mb-[24px] mt-0 ml-0 mr-0 p-0 rounded-[15px] truncate relative">
+                    <a class="gallery-img" href="{% static 'imgs/gallery/gallery_img_12.jpg' %}" title="Web Development">
+                        <img src="{% static 'imgs/gallery/gallery_img_thumb_12.jpg' %}" alt="portfolio img">
+                    </a>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

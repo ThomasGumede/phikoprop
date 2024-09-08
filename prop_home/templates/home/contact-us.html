@@ -1,0 +1,160 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #hero-section {
+        background-image: url("{% static 'imgs/about/about-banner.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+
+    #bout-bg::before {
+        background-image: url("{% static 'imgs/theme/6.png' %}");
+    }
+
+    #about-bg-2::before {
+        background-image: url("{% static 'imgs/theme/1.png' %}");
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<!-- Banner -->
+<section class="section-banner">
+    <div id="hero-section"
+        class="banner-image flex flex-wrap w-full justify-center sm:h-[400px] h-[300px] m-0 bg-cover bg-bottom">
+        <div class="w-full sm:h-[400px] h-[300px] absolute bg-[#000000bf]"></div>
+        <div class="flex items-center justify-center text-center z-2">
+            <div class="mt-[65px]">
+                <h2
+                    class="mb-3 2xl:text-[40px] xl:text-[38px] lg:text-[36px] md:text-[34px] sm:text-[30px] text-[28px] font-bold">
+                    Contact Us</h2>
+                <h5 class="text-[16px]">
+                    <span>
+                        <a href="{% url 'prop_home:prop-home' %}" class="text-white hover:text-white">Home</a>
+                    </span>
+                    <span class="font-bold"> / </span>
+                    <span>
+                        <a href="javascript:void(0)" class="text-white hover:text-white">Contact Us</a>
+                    </span>
+                </h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section-contact relative xl:py-[100px] py-[70px]">
+    <div id=bout-bg""
+        class=" bg-size-full before:bg-no-repeat before:absolute before:lg:left-[-50px] before:md:left-[-6px] before:left-[10px] before:bottom-0 before:z-[-1] before:2xl:w-[260px] before:xl:w-[185px] before:md:w-[138px] before:w-[60px] before:2xl:h-[500px] before:xl:h-[350px] before:md:h-[275px] before:h-[120px]">
+    </div>
+    <div
+        class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+        <div class="lg:flex flex-wrap w-full">
+            <div class="lg:w-1/3 w-full px-3 mb-[24px]">
+                <div class="lh-contact h-full p-[24px] bg-custom-bg rounded-[15px] flex flex-col flex-wrap"
+                    data-aos="fade-up" data-aos-duration="1000">
+                    <div class="flex justify-center pb-3">
+                        <img src="{% static 'imgs/contact/call-1.svg' %}" class="w-[60px] h-[60px] svg-img" alt="call">
+                    </div>
+                    <div class="text-center">
+                        <h4 class="xl:text-[22px] lg:text-5 text-[18px] font-normal text-[#000] py-3">Make A
+                            call</h4>
+                        <p>This is the dolor sit amet consectetur adipisicing elit. In, quis!</p>
+                        <div class="pt-3">
+                            <a href="#" class="text-custom-primary hover:text-custom-primary">+27 66 340 9363</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/3 w-full px-3 mb-[24px]">
+                <div class="lh-contact h-full p-[24px] bg-custom-bg rounded-[15px] flex flex-col flex-wrap"
+                    data-aos="fade-up" data-aos-duration="1500">
+                    <div class="flex justify-center pb-3">
+                        <img src="{% static 'imgs/contact/email-1.svg' %}" class="w-[60px] h-[60px] svg-img" alt="contact">
+                    </div>
+                    <div class="text-center">
+                        <h4 class="xl:text-[22px] lg:text-lg text-[18px] font-normal text-[#000] py-3">Send A
+                            Email</h4>
+                        <p>This is the dolor sit amet consectetur adipisicing elit. In, quis!</p>
+                        <div class="pt-3">
+                            <a href="#" class="text-custom-primary hover:text-custom-primary">phiko_prop@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/3 w-full px-3 mb-[24px]">
+                <div class="lh-contact h-full p-[24px] bg-custom-bg rounded-[15px] flex flex-col flex-wrap"
+                    data-aos="fade-up" data-aos-duration="2000">
+                    <div class="flex justify-center pb-3">
+                        <img src="{% static 'imgs/contact/support-1.svg' %}" class="w-[60px] h-[60px] svg-img" alt="contact">
+                    </div>
+                    <div class="text-center">
+                        <h4 class="xl:text-[22px] lg:text-lg text-[18px] font-normal text-[#000] py-3">Address
+                        </h4>
+                        <p>125, This is the, dolor sit amet, consectetur, quister 253 254!</p>
+                        <div class="pt-3">
+                            <p class="text-custom-primary">South Africa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-[24px] bg-custom-bg rounded-[15px] mx-3" data-aos="fade-up" data-aos-duration="2000">
+            <div class="flex flex-wrap mb-[-24px]">
+                <div class="lg:w-1/2 lg:pr-3 pr-0 pl-0 mb-[24px] w-full">
+                    <div class="lh-contact-touch-inner">
+                        <div class="lh-contact-touch-contain">
+                            <h4
+                                class="text-[#000] pb-[15px] 2xl:text-[28px] xl:text-[26px] lg:text-[24px] font-bold md:text-[22px] sm:text-lg text-[18px]">
+                                Get In Touch With Us Fell Free To Write Us</h4>
+                            <p>This is the dolor consectetur adpisicing elit. Deleniti quam exercitationem a
+                                expedita natus quisquam. Deleniti Facere exercitationem ratione nihil Deleniti
+                                delectus possimus!</p>
+                        </div>
+                        <div class="pt-[30px]">
+                            <form action="#">
+                                <div class="flex xl:mb-[30px] mb-[15px]">
+                                    <input type="text" name="firstname" placeholder="Your Name*"
+                                        class="border-0 bg-white pl-5 outline-0 h-[50px] w-full rounded-[15px] mr-[30px]"
+                                        required="">
+                                    <input type="email" name="email" placeholder="Your Email*"
+                                        class="border-0 bg-white pl-5 outline-0 h-[50px] w-full rounded-[15px]"
+                                        required="">
+                                </div>
+                                <div class="flex xl:mb-[30px] mb-[15px]">
+                                    <input type="text" name="firstname" placeholder="Your Subject*"
+                                        class="border-0 bg-white pl-5 outline-0 h-[50px] w-full rounded-[15px]"
+                                        required="">
+                                </div>
+                                <div class="flex xl:mb-[30px] mb-[15px]">
+                                    <textarea
+                                        class="border-0 bg-white outline-none px-5 py-[15px] h-[150px] w-full rounded-[15px]"
+                                        placeholder="Message*"></textarea>
+                                </div>
+                                <button
+                                    class="m-[auto] duration-[0.3s] ease-in-out border-[1px] border-solid border-custom-primary px-[15px] py-[5px] leading-[28px] bg-custom-primary text-white relative z-[2] text-[15px] font-medium tracking-[1px] rounded-[10px] hover:bg-inherit hover:text-custom-primary"
+                                    type="submit">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 lg:pl-3 w-full pr-0 pl-0 mb-6">
+                    <div class="h-full">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29749.225774882685!2d72.84343101893258!3d21.245595574425934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f4fb5c0b087%3A0xb7aabd8a90da0679!2sMota%20Varachha%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1690017805909!5m2!1sen!2sin"
+                            class="w-full h-full mb-[-10px] rounded-[15px]"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class="2xl:after:w-[500px] lg:after:w-[400px] dark-opicity-1 after:w-[300px] 2xl:after:h-[500px] xl:after:h-[400px] after:h-[300px] bg-size-full after:absolute 2xl:after:top-[30px] after:top-5 after:right-[-180px] after:z-0 after:bg-[url('{% static 'imgs/theme/9.png')]">
+    </div>
+</section>
+{% endblock content %}

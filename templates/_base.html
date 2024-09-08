@@ -1,0 +1,94 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% tailwind_preload_css %}
+    {% tailwind_css %}
+    {{form.media}}
+    {% block styles %}
+    {% endblock styles %}
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Phiko Hotel Booking Template.">
+    <meta name="keywords"
+        content="hotel, booking, business, restaurant, spa, resort, landing, agency, corporate, start up, site design, new business site, business template, professional template, classic, modern">
+    <title>Phiko - Hotel Booking.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script defer src="{% static 'js/vendor/alpinejs.min.js' %}"></script>
+
+    <!-- Css All Plugins Files -->
+    <link rel="stylesheet" href='{% static "css/vendor/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href="{% static 'css/vendor/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/remixicon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/semantic.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/slick.min.css' %}">
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'imgs/favicons/favicon.ico' %}" type="image/x-icon">
+
+    <link rel="icon" href="{% static 'imgs/favicons/favicon-32x32.png' %}" sizes="32x32">
+    <link rel="icon" href="{% static 'imgs/favicons/android-chrome-192x192.png' %}" sizes="192x192">
+    <link rel="apple-touch-icon" href="{% static 'imgs/apple-touch-icon.png' %}">
+
+</head>
+
+<body class="overflow-x-hidden font-sans">
+
+    <!-- loader -->
+    <div
+        class="lh-loader min-w-full w-full h-screen fixed top-0 left-0 flex items-center justify-center bg-white z-[25]">
+        <span class="loader w-[100px] h-[100px] flex relative items-center justify-center"></span>
+    </div>
+
+    <!-- Header -->
+    {% include "includes/header.html" %}
+    <main>
+        {% include "includes/messages.html" %}
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    
+    {% include "includes/footer.html" %}
+    <!-- Tap to top -->
+    <a href="#"
+        class="back-to-top hidden fixed right-[15px] bottom-[15px] z-10 hover:text-white cursor-pointer w-[38px] h-[38px] rounded-[20px] bg-[#ed5b31] text-white text-center text-[22px] leading-relaxed result-placeholder">
+        <i class="ri-arrow-up-double-line text-[20px]"></i>
+    </a>
+
+    
+
+</body>
+
+<!-- Plugins JS -->
+<script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+<script src="{% static 'js/vendor/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'js/vendor/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/vendor/magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/vendor/aos.js' %}"></script>
+<script src="{% static 'js/vendor/semantic.min.js' %}"></script>
+<script src="{% static 'js/vendor/slick.min.js' %}"></script>
+
+<!-- main style -->
+<script src="{% static 'js/main.js' %}"></script>
+{% block js %}{% endblock js %}
+</html>

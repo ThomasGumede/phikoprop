@@ -1,0 +1,183 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}<title>BBGI - {{user.username}}</title>{% endblock title %}
+{% block styles %}
+<style>
+    #bggg-loging {
+        background-image: url("{% static 'imgs/services/3.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #hero-section {
+        background-image: url("{% static 'imgs/about/about-banner.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+</style>
+{% endblock styles %}
+{% block content %}
+
+<section class="section-banner">
+    <div id="hero-section"
+        class="banner-image flex flex-wrap w-full justify-center sm:h-[400px] h-[300px] m-0 bg-cover bg-bottom">
+        <div class="w-full sm:sm:h-[400px] h-[300px] absolute bg-[#000000bf]"></div>
+        <div class="flex items-center justify-center text-center z-2">
+            <div class="mt-[65px]">
+                <h2
+                    class="mb-[12px] 2xl:text-[40px] xl:text-[38px] lg:text-[36px] md:text-[34px] sm:text-[30px] text-[28px] font-bold">
+                    Account Details</h2>
+                <h5 class="text-[16px]">
+                    <span>
+                        <a href="{% url 'prop_home:prop-home' %}" class="text-[#fff] hover:text-[#fff]">Home</a>
+                    </span>
+                    <span class="font-bold"> / </span>
+                    <span>
+                        <a href="javascript:void(0)" class="text-[#fff] hover:text-[#fff]">Account Details</a>
+                    </span>
+                </h5>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="w-full font-sans py-20 px-0 bg-white">
+    <div class="container">
+        <div class="w-full">
+            <div class="flex w-fit flex-col lg:items-start md:flex-row gap-11 mx-auto">
+                <div class="w-28 h-28 md:w-56 md:h-56 mx-auto overflow-hidden rounded-full bg-custom-bg">
+                    {% if user.profile_image %}
+                    <img src="{{user.profile_image.url}}" alt="{{user.first_name}}"
+                        class="w-full h-full object-contain" />
+                    {% else %}
+                    <p class="text-white font-bold text-3xl md:text-6xl">{{user.first_name.0}}{{user.last_name.0}}</p>
+                    {% endif %}
+                </div>
+                <div class="text-center grid items-center justify-center gap-4 md:text-left md:w-[550px]">
+                    <div class="">
+                        <p class="text-3xl md:text-4xl font-bold text-custom-h">
+                            {{user.title}} {{user.get_full_name}}
+                        </p>
+                    </div>
+
+                    <div class="">
+                        <div class="space-x-1 text-custom-text">
+                            <p class="text-base inline font-normal">
+                                <i class="fa-solid fa-phone mr-1"></i> {{user.phone}} |
+                            </p>
+                            <p class="text-base inline font-normal">
+                                <i class="fa-solid fa-envelope mr-1"></i> {{user.email}}
+                            </p>
+                        </div>
+                        <div class="space-x-1 text-custom-text">
+                            <p class="text-sm lg:text-base font-normal text-custom-text">
+                                <i class="fa-solid fa-location-dot mr-1"></i> {{user.get_address}}
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="relative block">
+                        {% if request.user == user %}
+                        <div class="text-center p-2 rounded-md border  text-base">
+                            <a href="{% url 'accounts:profile-update' %}" class="text-custom-h"> Edit
+                                profile </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="w-full bg-white mb-20 overflow-hidden">
+    <div class="container">
+        <div class="w-full">
+            <div class="w-full p-4">
+                <div id="biography" class="block w-full text-center user_nav_list">
+
+                    <div class="space-y-5 grid mx-auto w-full">
+                        <h5 class="text-custom-h text-2xl font-bold">Biography</h5>
+
+
+                        <div class="w-full mx-auto text-center">
+                            <div class="w-full text-center">
+                                {% if user.biography == none %}
+                                <p class="text-sm text-custom-tertiary font-normal">
+                                    {{user.first_name}} currently does not have biography
+                                </p>
+                                {% else %}
+                                <p class="text-sm text-custom-tertiary font-normal">
+                                    {{user.biography}} Lorem, ipsum dolor sit amet consectetur adipisicing elit. In maiores quisquam esse quis deserunt vel ullam soluta officia eius nihil, magni molestias quaerat eligendi quibusdam consequatur est neque adipisci magnam!
+                                </p>
+                                {% endif %}
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block js %}
+<script>
+    const navToggler = document.querySelectorAll(".user_nav_item");
+    const navbarList = document.querySelectorAll(".user_nav_list");
+    const campaign_percentage_w = document.getElementsByClassName("campaign_percentage_w");
+
+    window.onload = () => {
+        for (let index = 0; index < campaign_percentage_w.length; index++) {
+            const element = campaign_percentage_w[index];
+            element.style.width = `${element.getAttribute("data-style")}%`
+        }
+
+    }
+
+
+    navToggler.forEach(ele => {
+        ele.addEventListener("click", function () {
+            for (let i = 0; i < navToggler.length; i++) {
+                navToggler[i].classList.remove("active");
+                navToggler[i].classList.remove("bg-gray-300");
+                navToggler[i].classList.remove("text-gray-900");
+                navToggler[i].classList.add("bg-custom-primary");
+                navToggler[i].classList.add("text-white");
+
+            }
+            let dataAttrib = ele.getAttribute("data-category");
+
+
+            loadData(dataAttrib);
+
+            ele.classList.add("active");
+            ele.classList.add("bg-gray-300");
+            ele.classList.add("text-gray-900");
+            ele.classList.remove("bg-custom-primary");
+            ele.classList.remove("text-white");
+
+        })
+    })
+
+    function loadData(idAttrib) {
+        let data = document.getElementById(idAttrib);
+        for (let i = 0; i < navbarList.length; i++) {
+            if (navbarList[i].classList.contains("block")) {
+                navbarList[i].classList.remove("block");
+                navbarList[i].classList.add("hidden");
+            }
+
+        }
+        if (data.classList.contains("hidden")) {
+            data.classList.remove("hidden");
+            data.classList.add("block");
+        }
+
+    }
+
+</script>
+{% endblock js %}

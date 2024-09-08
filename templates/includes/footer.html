@@ -1,0 +1,130 @@
+{% load static %}
+<footer class="pt-[70px] bg-custom-h">
+    <div class="mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+        <div class="footer-top-section pb-[70px]">
+            <div class="flex flex-wrap mb-[-24px] w-full">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-[12px] mb-[24px] lg:order-[1] order-[2]">
+                    <div class="lh-footer-cols-contain">
+                        <div class="lg:pb-[20px] pb-[12px] text-white">
+                            <h4 class="text-[18px] leading-[1.25] font-medium">Explore</h4>
+                        </div>
+                        <ul>
+                            <li class="py-[5px]">
+                                <code class="text-[16px] text-custom-primary">*</code>
+                                <a href="{% url 'prop_home:prop-home' %}" class="text-[14px] text-custom-tertiary hover:text-custom-tertiary">Home</a>
+                            </li>
+                            <li class="py-[5px]">
+                                <code class="text-[16px] text-custom-primary">*</code>
+                                <a href="{% url 'prop_home:about-us' %}" class="text-[14px] text-custom-tertiary hover:text-custom-tertiary">About</a>
+                            </li>
+                            <li class="py-[5px]">
+                                <code class="text-[16px] text-custom-primary">*</code>
+                                <a href=""
+                                    class="text-[14px] text-custom-tertiary hover:text-custom-tertiary">Rooms & suites</a>
+                            </li>
+                            <li class="py-[5px]">
+                                <code class="text-[16px] text-custom-primary">*</code>
+                                <a href="{% url 'prop_home:get-blogs' %}" class="text-[14px] text-custom-tertiary hover:text-custom-tertiary">Blog</a>
+                            </li>
+                            <li class="py-[5px]">
+                                <code class="text-[16px] text-custom-primary">*</code>
+                                <a href="restaurant.html"
+                                    class="text-[14px] text-custom-tertiary hover:text-custom-tertiary">Restaurant</a>
+                            </li>
+                            <li class="py-[5px]">
+                                <code class="text-[16px] text-custom-primary">*</code>
+                                <a href="{% url 'prop_home:get-gallery' %}"
+                                    class="text-[14px] text-custom-tertiary hover:text-custom-tertiary">Gallery</a>
+                            </li>
+                            <li class="pt-[5px]">
+                                <code class="text-[16px] text-custom-primary">*</code>
+                                <a href="{% url 'prop_home:contact-us' %}"
+                                    class="text-[14px] text-custom-tertiary hover:text-custom-tertiary">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full px-[12px] mb-[24px] lg:order-[2] order-[1]">
+                    <div
+                        class="lh-social-media h-full lg:border-x-[1px] lg:border-b-[0] md:border-b-[1px] border-b-[0] lg:pb-[0] md:pb-[30px] pb-[0] border-solid border-[#808384]">
+                        <div class="footer-logos flex md:justify-center justify-start">
+                            <img src="{% static 'imgs/logo/logo.png' %}" alt="logo" class="w-[180px]">
+                        </div>
+                        <div class="lh-footer-social lg:p-[24px] py-[24px] lg:border-b border-solid border-[#808384]">
+                            <p
+                                class="md:m-auto md:text-center text-left text-[14px] max-w-[400px] text-custom-tertiary leading-[22px]">
+                                This is the dolor sit amet consectetur adipisicing elit. Libero voluptatem soluta
+                                eaque ullam accusantium animi!</p>
+
+                        </div>
+                        <div
+                            class="lh-follow-social md:block flex-col justify-self-center items-center xl:pt-[24px] xl:pb-0 lg:pt-[22px] pt-[0] lg:pb-[30px] pb-0">
+                            <h4 class="heading text-[18px] font-medium md:text-center text-left">Follow On Social
+                            </h4>
+                            <div class="footer-logo-image flex md:justify-center pt-[15px] md:text-center text-left">
+                                <a href="#">
+                                    <img src="{% static 'imgs/logo/facebook.png' %}" alt="facebook"
+                                        class="w-[30px] mx-[4px] duration-[0.3s] ease-in-out hover:scale-[1.3]">
+                                </a>
+                                <a href="#">
+                                    <img src="{% static 'imgs/logo/twitter.png' %}" alt="twitter"
+                                        class="w-[30px] mx-[4px] duration-[0.3s] ease-in-out hover:scale-[1.3]">
+                                </a>
+                                <a href="#">
+                                    <img src="{% static 'imgs/logo/instagram.png' %}" alt="instagram"
+                                        class="w-[30px] mx-[4px] duration-[0.3s] ease-in-out hover:scale-[1.3]">
+                                </a>
+                                <a href="#">
+                                    <img src="{% static 'imgs/logo/linkedin.png' %}" alt="linkedin"
+                                        class="w-[30px] mx-[4px] duration-[0.3s] ease-in-out hover:scale-[1.3]">
+                                </a>
+                                <a href="#">
+                                    <img src="{% static 'imgs/logo/dribbble.png' %}" alt="dribbble"
+                                        class="w-[30px] mx-[4px] duration-[0.3s] ease-in-out hover:scale-[1.3]">
+                                </a>
+                                <a href="#">
+                                    <img src="{% static 'imgs/logo/pinterest.png' %}" alt="pinterest"
+                                        class="w-[30px] mx-[4px] duration-[0.3s] ease-in-out hover:scale-[1.3]">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-[12px] mb-[24px] lg:order-[3] order-[3]">
+                    <div class="lh-footer-cols-contain ">
+                        <div class="lg:pb-[20px] pb-[12px] text-white">
+                            <h4 class="text-[18px] leading-[1.25] font-medium">Contact Information</h4>
+                        </div>
+                        <div class="lh-footer-contact-infoemation">
+                            <ul>
+                                <li class="lh-information xl:py-[14px] lg:py-[8px] md:py-[13px] py-[8px]">
+                                    <h5 class="heading mb-[5px] md:text-[16px] text-[15px] font-medium tracking-wider">
+                                        Location</h5>
+                                    <span class="text-[14px] text-custom-tertiary">5 Green st.Huntington stati on, WC
+                                        11746, Libero voluptatem soluta Bharat.</span>
+                                </li>
+                                <li class="lh-information xl:py-[14px] lg:py-[8px] md:py-[13px] py-[8px]">
+                                    <h5 class="heading mb-[5px] md:text-[16px] text-[15px] font-medium tracking-wider">
+                                        Email</h5>
+                                    <span class="text-[14px] text-custom-tertiary">phiko_prop@gmail.com</span>
+                                </li>
+                                <li class="lh-information xl:py-[14px] lg:py-[8px] md:py-[13px] py-[8px] pb-0">
+                                    <h5 class="heading mb-[5px] md:text-[16px] text-[15px] font-medium tracking-wider">
+                                        Phone No</h5>
+                                    <span class="text-[14px] text-custom-tertiary">+27 66 340 9363</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-copy px-[12px]">
+            <div class="flex justify-center border-t-[1px] border-solid border-[#808384]">
+                <span class="text-white py-[10px] text-center">Copyright @ <span id="copyright_year"></span>
+                    <a href="" class="text-custom-primary hover:text-custom-primary">Phiko</a> All Rights
+                    Reserved</span>
+            </div>
+        </div>
+    </div>
+</footer>

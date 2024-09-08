@@ -1,0 +1,190 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #hero-section {
+        background-image: url("{% static 'imgs/hero/hero-section.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+</style>
+{% endblock styles %}
+{% block content %}
+<!-- Banner -->
+<section class="section-banner">
+    <div id="hero-section"
+        class="banner-image flex flex-wrap w-full justify-center sm:h-[400px] h-[300px] m-0 bg-cover bg-bottom">
+        <div class="w-full sm:h-[400px] h-[300px] absolute bg-[#000000bf]"></div>
+        <div class="flex items-center justify-center text-center z-2">
+            <div class="mt-[65px]">
+                <h2
+                    class="mb-[12px] 2xl:text-[40px] xl:text-[38px] lg:text-[36px] md:text-[34px] sm:text-[30px] text-[28px] font-bold">
+                    Room Application</h2>
+                <h5 class="text-[16px]">
+                    <span>
+                        <a href="{% url 'prop_home:prop-home' %}" class="text-white hover:text-white">Home</a>
+                    </span>
+                    <span class="font-bold"> / </span>
+                    <span>
+                        <a href="javascript:void(0)" class="text-white hover:text-white">Apply</a>
+                    </span>
+                </h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- checkout-detsils -->
+<section class="checkout-page xl:py-[100px] py-[70px]">
+    <div
+        class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+        <div class="w-full mb-[-24px]">
+            <div class="lg:w-12/12 w-full px-[12px] mb-[24px] check-dash" data-aos="fade-up" data-aos-duration="2000">
+                <div class="lh-checkout">
+                    <div class="lh-checkout-content">
+                        <div class="lh-checkout-inner mb-[-24px]">
+                            <div
+                                class="lh-checkout-wrap p-[24px] border-[1px] border-solid border-custom-bg bg-white rounded-[15px] mb-[24px]">
+                                {% include "includes/errors.html" %}
+                                <div class="lh-checkout-block lh-check-bill">
+                                    <h3
+                                        class="text-[20px] font-semibold font-Montserrat tracking-normal mb-[25px] relative block text-custom-text leading-[1]">
+                                        Applicant Details</h3>
+                                    <div class="lh-bl-block-content">
+                                        <div class="lh-check-bill-form">
+                                            <form  method="post"
+                                                class="mx-[-15px] space-y-5 mb-[-15px]">
+                                                {% csrf_token %}
+                                                <div class="flex flex-row flex-wrap">
+                                                    <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                        <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">First
+                                                            Name*</label>
+                                                        {{form.applicant_first_name}}
+                                                    </span>
+                                                    <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                        <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">Last
+                                                            Name*</label>
+                                                        {{form.applicant_last_name}}
+                                                    </span>
+                                                    
+                                                    <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                        <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">
+                                                            Email*</label>
+                                                        {{form.applicant_email}}
+                                                    </span>
+                                                    <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                        <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">
+                                                            Phone number*</label>
+                                                        <input type="tel" name="applicant_phone" id="id_applicant_phone"
+                                                            class="bg-transparent px-[15px] w-full h-[50px] rounded-[15px] outline-0 border border-solid border-custom-bg text-sm text-custom-text"
+                                                            placeholder="Enter your phone number" required>
+                                                    </span>
+                                                    <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                        <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">
+                                                            ID Number*</label>
+                                                        {{form.applicant_identity_number}}
+                                                    </span>
+                                                    <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                        <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">
+                                                            Gender</label>
+                                                        <span
+                                                            class="lh-bl-select-inner relative flex items-center rounded-[15px] text-sm px-[15px] py-0 w-full h-[50px] border border-solid border-custom-bg">
+                                                            {{form.applicant_gender}}
+                                                        </span>
+                                                    </span>
+                                                    
+                                                </div>
+                                                <div class="space-y-3">
+                                                    <h4 class="text-custom-h text-xl font-bold">
+                                                        Next of kin
+                                                    </h4>
+                                                    <div class="flex flex-row flex-wrap">
+                                                        <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                            <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">First
+                                                                Name*</label>
+                                                            {{form.relative_first_name}}
+                                                        </span>
+                                                        <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                            <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">Last
+                                                                Name*</label>
+                                                            {{form.relative_last_name}}
+                                                        </span>
+                                                        
+                                                        <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                            <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">
+                                                                Cell number*</label>
+                                                            {{form.relative_phone}}
+                                                        </span>
+                                                        <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                            <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">
+                                                                Email*</label>
+                                                            {{form.relative_email}}
+                                                        </span>
+                                                        
+                                                        <span class="lh-bill-wrap w-full px-[15px] mb-[15px]">
+                                                            <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">
+                                                                Relationship</label>
+                                                            <span
+                                                                class="lh-bl-select-inner relative flex items-center rounded-[15px] text-sm px-[15px] py-0 w-full h-[50px] border border-solid border-custom-bg">
+                                                                {{form.relationship}}
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="space-y-3">
+                                                    <h4 class="text-custom-h text-xl font-bold">
+                                                        Applicant Address
+                                                    </h4>
+                                                    <div class="flex flex-row flex-wrap">
+                                                        <span class="lh-bill-wrap w-full px-[15px] mb-[15px]">
+                                                            <label
+                                                                class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">Address</label>
+                                                            {{form.address_one}}
+                                                        </span>
+                                                        <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                            <label
+                                                                class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">City
+                                                                *</label>
+                                                            {{form.city}}
+                                                        </span>
+                                                        <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                            <label
+                                                                class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">Post
+                                                                Code</label>
+                                                            {{form.zipcode}}
+                                                        </span>
+                                                        <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                            <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">
+                                                                Country</label>
+                                                            {{form.country}}
+                                                        </span>
+                                                        <span class="lh-bill-wrap sm:w-1/2 w-full px-[15px] mb-[15px]">
+                                                            <label class="mb-[7px] text-custom-text text-[15px] font-medium tracking-normal leading-[1]">Province
+                                                                *</label>
+                                                            <span
+                                                                class="lh-bl-select-inner relative flex items-center rounded-[15px] text-sm px-[15px] py-0 w-full h-[50px] border border-solid border-custom-bg">
+                                                                {{form.province}}
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <button
+                                                    class="inline-block shrink-0 rounded-md border !border-custom-h bg-custom-h px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:!text-custom-h focus:outline-none focus:ring active:text-blue-500">
+                                                    Apply
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

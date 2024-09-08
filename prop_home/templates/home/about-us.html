@@ -1,0 +1,335 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #hero-section {
+        background-image: url("{% static 'imgs/about/about-banner.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+
+    #bout-bg::before {
+        background-image: url("{% static 'imgs/theme/6.png' %}");
+    }
+
+    #about-bg-2::before {
+        background-image: url("{% static 'imgs/theme/1.png' %}");
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<!-- Banner -->
+<section class="section-banner">
+    <div id="hero-section"
+        class="banner-image flex flex-wrap w-full justify-center sm:h-[400px] h-[300px] m-0 bg-cover bg-bottom">
+        <div class="w-full sm:h-[400px] h-[300px] absolute bg-[#000000bf]"></div>
+        <div class="banner-section flex items-center justify-center text-center z-2">
+            <div class="lh-banner-contain mt-[65px]">
+                <h2
+                    class="mb-[12px] 2xl:text-[40px] xl:text-[38px] lg:text-[36px] md:text-[34px] sm:text-[30px] text-[28px] font-bold">
+                    About Us</h2>
+                <div class="lh-breadcrumb">
+                    <h5 class="text-[16px]">
+                        <span>
+                            <a href="{% url 'prop_home:prop-home' %}" class="text-white hover:text-white">Home</a>
+                        </span>
+                        <span class="font-bold"> / </span>
+                        <span>
+                            <a href="javascript:void(0)" class="text-white hover:text-white">About Us</a>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="section-about relative xl:py-[100px] py-[70px]">
+    <div id="about-bg"
+        class=" dark-opicity-5 bg-size-full before:absolute before:z-[-1] 2xl:before:w-[240px] 2xl:before:h-[130px] before:h-[100px] before:w-[180px] before:bottom-[100px] before:left-[-80px]">
+    </div>
+    <div
+        class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+        <div class="flex flex-wrap mb-[-24px]">
+            <div class="lg:w-1/2 w-full px-[12px] mb-[24px]" data-aos="fade-up" data-aos-duration="2000">
+                <div id="about-bg-2"
+                    class="bg-size-full dark-opicity-5 before:absolute before:z-[-1] 2xl:before:w-[150px] before:w-[120px] 2xl:before:h-[150px] before:h-[120px] before:top-0 2xl:before:left-[-150px] before:left-[-130px]">
+                </div>
+                <img src="{% static 'imgs/about/about-page-1.png' %}" alt="about-page-1" class="w-100">
+            </div>
+            <div class="lg:w-1/2 w-full px-[12px] mb-[24px]" data-aos="fade-up" data-aos-duration="2000">
+                <div class="h-full flex flex-col justify-center">
+                    <div class="text-left w-full lg:mb-[30px] mb-[12px]">
+                        <h2
+                            class="text-black font-medium leading-[1.2] 2xl:text-[40px] xl:text-[35px] xl:pb-0 lg:text-[30px] md:text-[28px] sm:text-[26px] text-[22px]">
+                            The world's best <span class="text-custom-primary">Luxury Properties</span>
+                        </h2>
+                    </div>
+                    <div class="xl:pb-[24px] pb-[15px] border-b border-solid border-[#e3e1e1]">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem corrupti libero itaque,
+                            exercitationem nemo porro enim officiis consectetur fugit debitis repellendus sed
+                            ratione maxime adipisci eos vitae cupiditate neque expedita!</p>
+                    </div>
+                    <div class="flex flex-wrap mb-[-15px] ld-about-rows relative xl:py-[24px] py-[15px]">
+                        <div class="sm:w-1/2 w-full mb-[15px] sm:pr-[12px] pr-[0]">
+                            <h4 class="mb-[12px] text-black text-[18px] font-semibold leading-[1.25]">
+                                <i class="ri-arrow-right-up-line mr-[5px] text-[18px] rotate-[-42deg]"></i>Our Mission
+                            </h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, veritatis est.
+                                Dicta modi incidunt cupiditate!</p>
+                        </div>
+                        <div class="sm:w-1/2 w-full mb-[15px] sm:pl-[12px] pl-[0]">
+                            <h4 class="mb-[12px] text-black text-[18px] font-semibold leading-[1.25]">
+                                <i class="ri-arrow-right-up-line mr-[5px] text-[18px] rotate-[-42deg]"></i>Our Vision
+                            </h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, veritatis est.
+                                Dicta modi incidunt cupiditate!</p>
+                        </div>
+                    </div>
+                    <div class="text-[18px] font-medium">
+                        <i class="ri-phone-line text-custom-primary"></i> +27 66 340 9363
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Amenities -->
+<section class="section-amenities bg-[#f7f5f1] relative xl:py-[100px] py-[70px]">
+    <div
+        class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] relative">
+        <div class="text-center w-full mb-[30px]" data-aos="fade-up" data-aos-duration="2000">
+            <h2
+                class="text-black font-medium leading-[1.2] 2xl:text-[40px] xl:text-[35px] xl:pb-0 lg:text-[30px] md:text-[28px] sm:text-[26px] text-[22px]">
+                Amenities At <span class="text-custom-primary">Hotel</span>
+            </h2>
+        </div>
+        <div class="flex flex-wrap mb-[-24px]">
+            <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="1500">
+                    <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                        <div class="amenities-box xl:w-[50%] xl:p-0 w-full p-[24px] flex items-center justify-center">
+                            <img src="{% static 'imgs/amenities/1.png' %}" alt="amenities_1"
+                                class="w-full h-full xl:rounded-none rounded-[15px]">
+                        </div>
+                        <div
+                            class="amenities-box xl:w-[50%] xl:p-0 w-full px-[24px] pb-[24px] flex items-center justify-center">
+                            <div class="lh-amenities-in relative xl:p-[24px] px-[0]">
+                                <h4
+                                    class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                    01</h4>
+                                <div class="lh-top-dish pb-[15px]">
+                                    <img src="{% static 'imgs/amenities/amenities-dish-1.svg' %}"
+                                        class="svg-img w-[50px] h-[50px]" alt="amenities-dish-1">
+                                </div>
+                                <div class="amenities-contain">
+                                    <h4
+                                        class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                        Our Restaurant</h4>
+                                    <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">
+                                        This is the dolor sit amet adipisicing elit. Ducimus corrupti sit amet
+                                        tempore placeat ipsa.</p>
+                                    <a href="{% url 'prop_home:facility' %}"
+                                        class="no-underline uppercase text-[12px] text-black font-bold hover:text-black">Read
+                                        more <i
+                                            class="ri-arrow-right-line text-[15px] ml-[2px] duration-[0.2s] ease-in-out"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="2000">
+                    <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                        <div class="amenities-box xl:w-[50%] xl:p-0 w-full p-[24px] flex items-center justify-center">
+                            <img src="{% static 'imgs/amenities/2.png' %}" alt="amenities_2"
+                                class="w-full h-full xl:rounded-none rounded-[15px]">
+                        </div>
+                        <div
+                            class="amenities-box xl:w-[50%] xl:p-0 w-full px-[24px] pb-[24px] flex items-center justify-center">
+                            <div class="lh-amenities-in relative xl:p-[24px] px-[0]">
+                                <h4
+                                    class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                    02</h4>
+                                <div class="lh-top-dish pb-[15px]">
+                                    <img src="{% static 'imgs/amenities/amenities-dish-2.svg' %}"
+                                        class="svg-img w-[50px] h-[50px]" alt="amenities-dish-2">
+                                </div>
+                                <div class="amenities-contain">
+                                    <h4
+                                        class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                        Spa & Beauty</h4>
+                                    <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">
+                                        This is the dolor sit amet adipisicing elit. Ducimus corrupti sit amet
+                                        tempore placeat ipsa.</p>
+                                    <a href="{% url 'prop_home:facility' %}"
+                                        class="no-underline uppercase text-[12px] text-black font-bold hover:text-black">Read
+                                        more <i
+                                            class="ri-arrow-right-line text-[15px] ml-[2px] duration-[0.2s] ease-in-out"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="1500">
+                    <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                        <div
+                            class="amenities-box xl:w-[50%] xl:p-0 w-full px-[24px] pt-[24px] flex items-center justify-center">
+                            <div class="lh-amenities-in relative xl:p-[24px] px-[0] lh-amenities-right">
+                                <h4
+                                    class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                    03</h4>
+                                <div class="lh-top-dish pb-[15px]">
+                                    <img src="{% static 'imgs/amenities/amenities-dish-4.svg' %}"
+                                        class="svg-img w-[50px] h-[50px]" alt="amenities-dish-3">
+                                </div>
+                                <div class="amenities-contain">
+                                    <h4
+                                        class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                        Golf & Garden</h4>
+                                    <p class="text-[14px] xl:py-[15px] lg:py-[15px] md:py-[10px] py-[5px]">
+                                        This is the dolor sit amet adipisicing elit. Ducimus corrupti sit amet
+                                        tempore placeat ipsa.</p>
+                                    <a href="{% url 'prop_home:facility' %}"
+                                        class="no-underline uppercase text-[12px] text-black font-bold hover:text-black">Read
+                                        more
+                                        <i
+                                            class="ri-arrow-right-line text-[15px] ml-[2px] duration-[0.2s] ease-in-out"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="amenities-box xl:w-[50%] xl:p-0 w-full p-[24px] flex items-center justify-center">
+                            <img src="{% static 'imgs/amenities/3.png' %}" alt="amenities_3"
+                                class="w-full h-full xl:rounded-none rounded-[15px]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="2000">
+                    <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                        <div
+                            class="amenities-box xl:w-[50%] xl:p-0 w-full px-[24px] pt-[24px] flex items-center justify-center">
+                            <div class="lh-amenities-in relative xl:p-[24px] px-[0] lh-amenities-right">
+                                <h4
+                                    class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                    04</h4>
+                                <div class="lh-top-dish pb-[15px]">
+                                    <img src="{% static 'imgs/amenities/amenities-dish-3.svg' %}"
+                                        class="svg-img w-[50px] h-[50px]" alt="amenities-dish-4">
+                                </div>
+                                <div class="amenities-contain">
+                                    <h4
+                                        class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                        Fitness & Gym</h4>
+                                    <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">
+                                        This is the dolor sit amet adipisicing elit. Ducimus corrupti sit amet
+                                        tempore placeat ipsa.</p>
+                                    <a href="{% url 'prop_home:facility' %}"
+                                        class="no-underline uppercase text-[12px] text-black font-bold hover:text-black">Read
+                                        more
+                                        <i
+                                            class="ri-arrow-right-line text-[15px] ml-[2px] duration-[0.2s] ease-in-out"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="amenities-box xl:w-[50%] xl:p-0 w-full p-[24px] flex items-center justify-center">
+                            <img src="{% static 'imgs/amenities/4.png' %}" alt="amenities_4"
+                                class="w-full h-full xl:rounded-none rounded-[15px]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog -->
+<section class="section-blog bg-custom-bg xl:py-[100px] py-[70px]">
+    <div
+        class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+        <div class="text-center w-full mb-[30px]" data-aos="fade-up" data-aos-duration="2000">
+            <h2
+                class="text-black font-medium leading-[1.2] 2xl:text-[40px] xl:text-[35px] xl:pb-0 lg:text-[30px] md:text-[28px] sm:text-[26px] text-[22px]">
+                Stay Update With <span class="text-custom-primary">Us</span></h2>
+        </div>
+        <div class="slick-slider blog-slider my-0 lg:flex flex-wrap w-full">
+            <div class="blog-card mx-[12px] my-0">
+                <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/2.png' %}" alt="blog-img"
+                        class="w-full rounded-[15px]"></figure>
+                <div class="lh-blog flex flex-col justify-center">
+                    <div class="lh-blog-date py-[15px] leading-[15px]">
+                        <span class="text-[13px] font-sans"><code class="text-[16px] text-custom-primary">Restaurant</code>
+                            - 09 Jan 2023 - 05 Comment</span>
+                    </div>
+                    <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                        href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Offers Exclusive amenities & Facilities To Guests and free offers.</a>
+                </div>
+            </div>
+            <div class="blog-card mx-[12px] my-0">
+                <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/3.png' %}" alt="blog-img"
+                        class="w-full rounded-[15px]"></figure>
+                <div class="lh-blog flex flex-col justify-center">
+                    <div class="lh-blog-date py-[15px] leading-[15px]">
+                        <span class="text-[13px] font-sans"><code class="text-[16px] text-custom-primary">Marketing</code>
+                            - 15 Feb 2023 - 22 Comment</span>
+                    </div>
+                    <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                        href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Announces A Private Island Hotel In The Maldives for couple.</a>
+                </div>
+            </div>
+            <div class="blog-card mx-[12px] my-0">
+                <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/4.png' %}" alt="blog-img"
+                        class="w-full rounded-[15px]"></figure>
+                <div class="lh-blog flex flex-col justify-center">
+                    <div class="lh-blog-date py-[15px] leading-[15px]">
+                        <span class="text-[13px] font-sans"><code class="text-[16px] text-custom-primary">Hotel</code> - 22
+                            Dec 2023 - 00 Comment</span>
+                    </div>
+                    <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                        href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Exclusive amenities Facilities to Guests Offers rooms free.</a>
+                </div>
+            </div>
+            <div class="blog-card mx-[12px] my-0">
+                <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/5.png' %}" alt="blog-img"
+                        class="w-full rounded-[15px]"></figure>
+                <div class="lh-blog flex flex-col justify-center">
+                    <div class="lh-blog-date py-[15px] leading-[15px]">
+                        <span class="text-[13px] font-sans"><code class="text-[16px] text-custom-primary">Rooms</code> - 11
+                            Nov 2023 - 01 Comment</span>
+                    </div>
+                    <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                        href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Island Hotel In The Maldives Exclusive amenities Facilities.</a>
+                </div>
+            </div>
+            <div class="blog-card mx-[12px] my-0">
+                <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/6.png' %}" alt="blog-img"
+                        class="w-full rounded-[15px]"></figure>
+                <div class="lh-blog flex flex-col justify-center">
+                    <div class="lh-blog-date py-[15px] leading-[15px]">
+                        <span class="text-[13px] font-sans"><code class="text-[16px] text-custom-primary">Spa</code> - 02
+                            Mar 2023 - 25 Comment</span>
+                    </div>
+                    <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                        href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Amenities Facilities to Guests Offers rooms free Exclusive.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

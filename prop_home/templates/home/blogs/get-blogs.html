@@ -1,0 +1,336 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #hero-section {
+        background-image: url("{% static 'imgs/about/about-banner.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+
+    #bout-bg::before {
+        background-image: url("{% static 'imgs/theme/6.png' %}");
+    }
+
+    #about-bg-2::before {
+        background-image: url("{% static 'imgs/theme/1.png' %}");
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<!-- Banner -->
+<section class="section-banner">
+    <div id="hero-section"
+        class="banner-image flex flex-wrap w-full justify-center sm:h-[400px] h-[300px] m-0 bg-cover bg-bottom">
+        <div class="w-full sm:h-[400px] h-[300px] absolute bg-[#000000bf]"></div>
+        <div class="flex items-center justify-center text-center z-2">
+            <div class="mt-[65px]">
+                <h2
+                    class="mb-[12px] 2xl:text-[40px] xl:text-[38px] lg:text-[36px] md:text-[34px] sm:text-[30px] text-[28px] font-bold">
+                    Blog Classic</h2>
+                <h5 class="text-[16px]">
+                    <span>
+                        <a href="{% url 'prop_home:prop-home' %}" class="text-white hover:text-white">Home</a>
+                    </span>
+                    <span class="font-bold"> / </span>
+                    <span>
+                        <a href="javascript:void(0)" class="text-white hover:text-white">Blog Classic</a>
+                    </span>
+                </h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- blog -->
+<section class="Blog-page xl:py-[100px] py-[70px]">
+    <div
+        class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+        <div class="flex flex-wrap w-full mb-[-24px]">
+            <div class="lg:w-8/12 w-full px-[12px]">
+                <div class="lh-our-blog mb-[24px] bg-[#f7f5f1] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1200">
+                    <div class="relative">
+                        <img src="{% static 'imgs/blog/our-blog-1.png' %}" alt="our-blog-1" class="w-full rounded-t-[15px]">
+                        <div class="py-[6px] px-[12px] absolute top-[12px] right-[12px] bg-white rounded-[15px]">
+                            <h4
+                                class="text-custom-primary border-b-[1px] lg:text-[34px] md:text-[32px] sm:text-[28px] text-[24px] font-bold">
+                                09</h4>
+                            <span class="flex justify-center">sep</span>
+                        </div>
+                    </div>
+                    <div class="p-[24px]">
+                        <div class="pb-[24px] border-b-[1px] border-solid border-custom-bg">
+                            <h4 class="2xl:text-[22px] lg:text-[20px] text-[18px] font-bold text-black leading-[28px]">
+                                Most Expensive Hotel Rooms In Now York</h4>
+                            <span class="mt-[5px] block">By Admin - 06 Comment</span>
+                        </div>
+                        <div class="pt-[24px]">
+                            <p>This is the dolor sit amet consectetur adipisicing elit. Eaque assumenda deleniti hic
+                                exercitationem consequuntur dolores, asperiores unde nulla quo deserunt. Ea laborum
+                                maiores facilis dolor corporis deleniti illum accusamus a.</p>
+                        </div>
+                        <div class="pt-[24px] flex">
+                            <a class="duration-[0.3s] ease-in-out border-[1px] border-solid border-custom-primary px-[15px] py-[5px] leading-[28px] bg-custom-primary text-white relative z-[2] text-[15px] font-medium tracking-[1px] rounded-[10px] hover:bg-inherit hover:!text-custom-primary"
+                                href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">
+                                View More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh-our-blog mb-[24px] bg-[#f7f5f1] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1200">
+                    <div class="relative">
+                        <img src="{% static 'imgs/blog/our-blog-2.png' %}" alt="our-blog-2" class="w-full rounded-t-[15px]">
+                        <div class="py-[6px] px-[12px] absolute top-[12px] right-[12px] bg-white rounded-[15px]">
+                            <h4
+                                class="text-custom-primary border-b-[1px] lg:text-[34px] md:text-[32px] sm:text-[28px] text-[24px] font-bold">
+                                09</h4>
+                            <span class="flex justify-center">sep</span>
+                        </div>
+                    </div>
+                    <div class="p-[24px]">
+                        <div class="2xl:pb-[24px] xl:pb-[30px] pb-[24px] border-b-[1px] border-solid border-custom-bg">
+                            <h4 class="2xl:text-[22px] lg:text-[20px] text-[18px] font-bold text-black leading-[28px]">
+                                The Best Hotels For Business Vacations</h4>
+                            <span class="mt-[5px] block">By Admin - 06 Comment</span>
+                        </div>
+                        <div class="pt-[24px]">
+                            <p>This is the dolor sit amet consectetur adipisicing elit. Eaque assumenda deleniti hic
+                                exercitationem consequuntur dolores, asperiores unde nulla quo deserunt. Ea laborum
+                                maiores facilis dolor corporis deleniti illum accusamus a.</p>
+                        </div>
+                        <div class="pt-[24px] flex">
+                            <a class="duration-[0.3s] ease-in-out border-[1px] border-solid border-custom-primary px-[15px] py-[5px] leading-[28px] bg-custom-primary text-white relative z-[2] text-[15px] font-medium tracking-[1px] rounded-[10px] hover:bg-inherit hover:!text-custom-primary"
+                                href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">
+                                View More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh-our-blog mb-[24px] bg-[#f7f5f1] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1200">
+                    <div class="relative">
+                        <img src="{% static 'imgs/blog/our-blog-3.png' %}" alt="our-blog-3" class="w-full rounded-t-[15px]">
+                        <div class="py-[6px] px-[12px] absolute top-[12px] right-[12px] bg-white rounded-[15px]">
+                            <h4
+                                class=" text-custom-primary border-b-[1px] lg:text-[34px] md:text-[32px] sm:text-[28px] text-[24px] font-bold">
+                                09</h4>
+                            <span class="flex justify-center">sep</span>
+                        </div>
+                    </div>
+                    <div class="p-[24px]">
+                        <div class="pb-[24px] border-b-[1px] border-solid border-custom-bg">
+                            <h4 class="2xl:text-[22px] lg:text-[20px] text-[18px] font-bold text-black leading-[28px]">
+                                Guests Offers Exclusive Facilities to Services</h4>
+                            <span class="mt-[5px] block">By Admin - 06 Comment</span>
+                        </div>
+                        <div class="pt-[24px]">
+                            <p>This is the dolor sit amet consectetur adipisicing elit. Eaque assumenda deleniti hic
+                                exercitationem consequuntur dolores, asperiores unde nulla quo deserunt. Ea laborum
+                                maiores facilis dolor corporis deleniti illum accusamus a.</p>
+                        </div>
+                        <div class="pt-[24px] flex">
+                            <a class="duration-[0.3s] ease-in-out border-[1px] border-solid border-custom-primary px-[15px] py-[5px] leading-[28px] bg-custom-primary text-white relative z-[2] text-[15px] font-medium tracking-[1px] rounded-[10px] hover:bg-inherit hover:!text-custom-primary"
+                                href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">
+                                View More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-4/12 w-full px-[12px]">
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1200">
+                    <div class="p-[24px]">
+                        <div class="flex justify-center pb-[15px]">
+                            <img src="{% static 'imgs/blog/busness-1.png' %}" alt="businessman"
+                                class="w-[100px] h-[100px] rounded-[100px]">
+                        </div>
+                        <div class="text-center">
+                            <span>Hr Manager</span>
+                            <h4 class="text-[18px] text-black font-bold pb-[15px] m-0">Martyn Garcia</h4>
+                            <p>This is the dolor sit amet consectetur adipisicing elit. voluptatum.</p>
+                            <div class="pt-[15px] d-flex justify-center">
+                                <img src="{% static 'imgs/logo/facebook.png' %}" alt="facebook" class="w-[30px] mx-[2px]">
+                                <img src="{% static 'imgs/logo/twitter.png' %}" alt="twitter" class="w-[30px] mx-[2px]">
+                                <img src="{% static 'imgs/logo/instagram.png' %}" alt="instagram" class="w-[30px] mx-[2px]">
+                                <img src="{% static 'imgs/logo/linkedin.png' %}" alt="linkedin" class="w-[30px] mx-[2px]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1400">
+                    <form class="form-inline my-lg-0 d-flex">
+                        <input class="border-0 outline-0 bg-[#f7f5f1] pl-[24px] m-0 w-full h-[50px] rounded-[15px]"
+                            type="search" placeholder="Search here" aria-label="Search">
+                        <button type="button" class="pr-[24px]">
+                            <i class="ri-search-line"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1600">
+                    <div class="lh-our-blog-categories p-[24px]">
+                        <div class="border-b border-solid border-custom-bg pb-[24px]">
+                            <h4 class="text-[18px] text-black font-bold capitalize">Categories</h4>
+                        </div>
+                        <ul>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Managment</p>
+                                    <span class="w-full flex justify-end">[02]</span>
+                                </a>
+                            </li>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Facilities</p>
+                                    <span class="w-full flex justify-end">[26]</span>
+                                </a>
+                            </li>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Events</p>
+                                    <span class="w-full flex justify-end">[33]</span>
+                                </a>
+                            </li>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Restaurant</p>
+                                    <span class="w-full flex justify-end">[85]</span>
+                                </a>
+                            </li>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Hotel Design</p>
+                                    <span class="w-full flex justify-end">[12]</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1500">
+                    <div class="lh-our-blog-post p-[24px]">
+                        <div class="border-b border-solid border-custom-bg pb-[24px]">
+                            <h4 class="text-[18px] text-black font-bold capitalize">Popular Post</h4>
+                        </div>
+                        <div class="pt-[24px]">
+                            <div class="flex flex-wrap flex-row">
+                                <img src="{% static 'imgs/blog/blog-1.png' %}" alt="blog_post-1"
+                                    class="w-[80px] h-[80px] rounded-[15px]">
+                                <div class="leading-5pl-[24px] flex flex-col w-[calc(100%_-_80px)] pl-[24px]">
+                                    <span>Feb 11,2023</span>
+                                    <a href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}"
+                                        class="text-[15px] font-medium leading-[23px] text-black pt-[5px] hover:text-black">Grandeur
+                                        Voted Top Will Three Hotel...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-[24px]">
+                            <div class="flex flex-wrap flex-row">
+                                <img src="{% static 'imgs/blog/blog-2.png' %}" alt="blog_post-2"
+                                    class="w-[80px] h-[80px] rounded-[15px]">
+                                <div class="leading-5pl-[24px] flex flex-col w-[calc(100%_-_80px)] pl-[24px]">
+                                    <span>May 22,2023</span>
+                                    <a href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}"
+                                        class="text-[15px] font-medium leading-[23px] text-black pt-[5px] hover:text-black">Enjoy
+                                        Your Vacation With Your Beloved Partner</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-[24px]">
+                            <div class="flex flex-wrap flex-row">
+                                <img src="{% static 'imgs/blog/blog-3.png' %}" alt="blog_post-3"
+                                    class="w-[80px] h-[80px] rounded-[15px]">
+                                <div class="leading-5pl-[24px] flex flex-col w-[calc(100%_-_80px)] pl-[24px]">
+                                    <span>Sep 09,2023</span>
+                                    <a href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}"
+                                        class="text-[15px] font-medium leading-[23px] text-black pt-[5px] hover:text-black">The
+                                        Best Hotels For Business Vacations</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="2000">
+                    <div class="lh-our-blog-tages p-[24px]">
+                        <div class="border-b border-solid border-custom-bg pb-[24px]">
+                            <h4 class="text-[18px] text-black font-bold capitalize">Popular Tages</h4>
+                        </div>
+                        <div class="pt-[24px]">
+                            <ul class="p-0 m-[-5px] flex flex-wrap text-justify">
+                                <li class="float-left"><a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-[14px] text-[#777] leading-[32px] inline-block">Entertainment</a>
+                                </li>
+                                <li class="float-left"><a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-[14px] text-[#777] leading-[32px] inline-block">Booking</a>
+                                </li>
+                                <li class="float-left"><a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-[14px] text-[#777] leading-[32px] inline-block">Gym</a>
+                                </li>
+                                <li class="float-left"><a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-[14px] text-[#777] leading-[32px] inline-block">Hotel</a>
+                                </li>
+                                <li class="float-left"><a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-[14px] text-[#777] leading-[32px] inline-block">Entertainment</a>
+                                </li>
+                                <li class="float-left"><a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-[14px] text-[#777] leading-[32px] inline-block">Guests</a>
+                                </li>
+                                <li class="float-left"><a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-[14px] text-[#777] leading-[32px] inline-block">Entertainment</a>
+                                </li>
+                                <li class="float-left"><a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-[14px] text-[#777] leading-[32px] inline-block">Booking</a>
+                                </li>
+                                <li class="float-left"><a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-[14px] text-[#777] leading-[32px] inline-block">Gym</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="2200">
+                    <div class="lh-our-blog-instagram p-[24px]">
+                        <div class="border-b border-solid border-custom-bg pb-[24px]">
+                            <h4 class="text-[18px] text-black font-bold capitalize">instagram</h4>
+                        </div>
+                        <div class="lh-our-blog-instagram-image pt-[24px]">
+                            <div class="lh-our-blog-instagram-image-inner grid gap-[12px] relative">
+                                <a href="#"><img src="{% static 'imgs/instagram/1.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/2.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/3.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/4.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/5.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/6.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/7.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/8.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

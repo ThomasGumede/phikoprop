@@ -1,0 +1,446 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #hero-section {
+        background-image: url("{% static 'imgs/about/about-banner.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+
+    #bout-bg::before {
+        background-image: url("{% static 'imgs/theme/6.png' %}");
+    }
+
+    #about-bg-2::before {
+        background-image: url("{% static 'imgs/theme/1.png' %}");
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<!-- Banner -->
+<section class="section-banner">
+    <div id="hero-section"
+        class="banner-image flex flex-wrap w-full justify-center sm:h-[400px] h-[300px] m-0 bg-cover bg-bottom">
+        <div class="w-full sm:h-[400px] h-[300px] absolute bg-[#000000bf]"></div>
+        <div class="flex items-center justify-center text-center z-2">
+            <div class="mt-[65px]">
+                <h2
+                    class="mb-[12px] 2xl:text-[40px] xl:text-[38px] lg:text-[36px] md:text-[34px] sm:text-[30px] text-[28px] font-bold">
+                    Room Details</h2>
+                <h5 class="text-[16px]">
+                    <span>
+                        <a href="{% url 'prop_home:prop-home' %}" class="text-white hover:text-white">Home</a>
+                    </span>
+                    <span class="font-bold"> / </span>
+                    <span>
+                        <a href="javascript:void(0)" class="text-white hover:text-white">Blog Details</a>
+                    </span>
+                </h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog-detsils -->
+<section class="Blog-detsils xl:py-[100px] py-[70px]">
+    <div
+        class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+        <div class="flex flex-wrap w-full mb-[-24px]">
+            <div class="lg:w-8/12 w-full px-[12px] mb-[24px]">
+                <div class="lh-blog-details" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="lh-blog-details-image">
+                        <img src="{% static 'imgs/blog/1.png' %}" alt="blog-1" class="w-full rounded-[15px]">
+                    </div>
+                    <div class="lh-blog-details-contain">
+                        <div class="py-[10px]"><span class="text-[12px]">By Admin</span class="text-[12px]"> - <span
+                                class="text-[12px]">06 Comment</span> -
+                            <span class="text-[12px]">15 Nov 2023</span>
+                        </div>
+                        <h4 class="text-[22px] text-[#000] m-0 pb-[15px] leading-[28px] font-bold">Most Expensive
+                            Hotel Rooms In New York</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi assumenda dolorum
+                            molestiae voluptates, voluptate, facilis iure cumque eum fugit nihil harum dolor quas
+                            dolorem mollitia excepturi explicabo aut voluptatibus totam! Nulla quas quae, cupiditate
+                            sapiente aliquam.</p>
+                    </div>
+                    <div
+                        class="lh-blog-details-quote flex border-y-[1px] border-y-solid border-y-custom-bg py-[15px] mt-[15px]">
+                        <div class="lh-blog-details-quote-image">
+                            <img src="{% static 'imgs/testimonials/quotes.svg' %}"
+                                class="svg-img w-[50px] h-[50px] fill-custom-primary" alt="quotes">
+                        </div>
+                        <div class="pl-[15px]">
+                            <p class="text-[15px] text-[#777] font-light darkmode-white">This is the, dolor sit amet
+                                consectetur
+                                adipisicing elit. Possimus, eius tempore
+                                quidem a modi nemo aperiam beatae corporis adipisci repellendus?</p>
+                            <h4 class="text-[16px] text-[#000] pt-[15px] m-0 flex flex-col font-bold">Martyn Garcia
+                                <span class="text-[12px] text-[#777] font-Roboto font-normal">Hr Manager</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="py-[15px]">
+                        <p>This is the dolor sit amet consectetur adipisicing elit. Architecto obcaecati illo nam
+                            veritatis modi reiciendis quisquam, fuga, magni, enim inventore ratione? Accusantium
+                            eum, iure tempora iusto sapiente libero quidem laborum.</p>
+                    </div>
+                </div>
+                <div class="lh-blog-relaxation" data-aos="fade-up" data-aos-duration="1500">
+                    <h5 class="text-[22px] text-[#000] m-0 pb-[15px] leading-[28px] font-bold">The True Space For
+                        Relaxation</h5>
+                    <div class="flex flex-wrap">
+                        <div class="w-1/2 pr-[12px]">
+                            <div class="lh-blog-relaxation-image">
+                                <img src="{% static 'imgs/blog/2.png' %}" alt="blog-2" class="w-full rounded-[15px]">
+                            </div>
+                        </div>
+                        <div class="w-1/2 pl-[12px]">
+                            <div class="lh-blog-relaxation-image">
+                                <img src="{% static 'imgs/blog/3.png' %}" alt="blog-3" class="w-full rounded-[15px]">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="py-[20px]">This is the dolor sit amet consectetur adipisicing elit. Illum porro autem
+                        reprehenderit
+                        accusantium possimus minus voluptate dolor odit, dicta atque, obcaecati eius voluptatem
+                        sunt, aliquid quisquam. Totam quia quo consequuntur?</p>
+                    <div class="py-[19px] border-y-[1px] border-y-solid border-y-custom-bg flex flex-wrap">
+                        <h4 class="mr-[10px] text-[18px] text-[#000] flex items-center font-bold">Topics :</h4>
+                        <span class="float-left">
+                            <a href="#"
+                                class="ease-in-out duration-[0.3s] text-custom-text hover:bg-custom-primary hover:text-white border-[1px] border-solid border-custom-bg h-[32px] px-[15px] py-[3px] m-[5px] bg-[#f7f5f1] rounded-[5px] text-sm leading-[26px] inline-block">Entertainment</a>
+                        </span>
+                        <span class="float-left">
+                            <a href="#"
+                                class="ease-in-out duration-[0.3s] text-custom-text hover:bg-custom-primary hover:text-white border-[1px] border-solid border-custom-bg h-[32px] px-[15px] py-[3px] m-[5px] bg-[#f7f5f1] rounded-[5px] text-sm leading-[26px] inline-block">Booking</a>
+                        </span>
+                        <span class="float-left">
+                            <a href="#"
+                                class="ease-in-out duration-[0.3s] text-custom-text hover:bg-custom-primary hover:text-white border-[1px] border-solid border-custom-bg h-[32px] px-[15px] py-[3px] m-[5px] bg-[#f7f5f1] rounded-[5px] text-sm leading-[26px] inline-block">Fitness</a>
+                        </span>
+                        <span class="float-left">
+                            <a href="#"
+                                class="ease-in-out duration-[0.3s] text-custom-text hover:bg-custom-primary hover:text-white border-[1px] border-solid border-custom-bg h-[32px] px-[15px] py-[3px] m-[5px] bg-[#f7f5f1] rounded-[5px] text-sm leading-[26px] inline-block">Marketing</a>
+                        </span>
+                        <span class="float-left">
+                            <a href="#"
+                                class="ease-in-out duration-[0.3s] text-custom-text hover:bg-custom-primary hover:text-white border-[1px] border-solid border-custom-bg h-[32px] px-[15px] py-[3px] m-[5px] bg-[#f7f5f1] rounded-[5px] text-sm leading-[26px] inline-block">Finance</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="ld-blog-replic">
+                    <h4 class="text-[22px] text-[#000] m-0 pb-[15px] leading-[28px] font-bold pt-[24px]"
+                        data-aos="fade-up" data-aos-duration="1500">3 Replies to "Simple Steps For Replacing Old Tiling"
+                    </h4>
+                    <div class="flex py-[24px] border-b-[1px] border-solid border-custom-bg" data-aos="fade-up"
+                        data-aos-duration="1500">
+                        <div class="pr-[10px]">
+                            <img src="{% static 'imgs/blog/busness-1.png' %}" alt="busness-1"
+                                class="w-[50px] h-[50px] max-w-max rounded-[15px]">
+                        </div>
+                        <div class="pl-[10px] flex flex-col justify-between">
+                            <div class="d-flex flex flex-wrap flex-row justify-between items-center">
+                                <h4 class="text-[16px] font-bold text-[#000]">Roberr Martin <span
+                                        class="ml-[5px] pl-[5px] text-[12px] text-[#777] font-normal">- 22 Feb
+                                        2023</span></h4>
+                                <div class="flex justify-end">
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                </div>
+                            </div>
+                            <p class="py-[10px]">This is the dolor sit amet consectetur adipisicing elit. Accusamus
+                                distinctio neque voluptates atque consequatur recusandae consectetur modi illum
+                                molestiae quam.</p>
+                            <a href="#"
+                                class="text-[13px] font-semibold font-Cardo text-[#000] hover:text-[#000] uppercase">Reply</a>
+                        </div>
+                    </div>
+                    <div class="flex py-[24px] border-b-[1px] border-solid border-custom-bg" data-aos="fade-up"
+                        data-aos-duration="1500">
+                        <div class="pr-[10px]">
+                            <img src="{% static 'imgs/blog/busness-2.png' %}" alt="busness-2"
+                                class="w-[50px] h-[50px] max-w-max rounded-[15px]">
+                        </div>
+                        <div class="pl-[10px] flex flex-col justify-between">
+                            <div class="d-flex flex flex-wrap flex-row justify-between items-center">
+                                <h4 class="text-[16px] font-bold text-[#000]">Roberr Martin <span
+                                        class="ml-[5px] pl-[5px] text-[12px] text-[#777] font-normal">- 11 Jan
+                                        2023</span></h4>
+                                <div class="flex justify-end">
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                </div>
+                            </div>
+                            <p class="py-[10px]">This is the dolor sit amet consectetur adipisicing elit. Accusamus
+                                distinctio neque voluptates atque consequatur recusandae consectetur modi illum
+                                molestiae quam.</p>
+                            <a href="#"
+                                class="text-[13px] font-semibold font-Cardo text-[#000] hover:text-[#000] uppercase">Reply</a>
+                        </div>
+                    </div>
+                    <div class="flex py-[24px]" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="pr-[10px]">
+                            <img src="{% static 'imgs/blog/busness-3.png' %}" alt="busness-3"
+                                class="w-[50px] h-[50px] max-w-max rounded-[15px]">
+                        </div>
+                        <div class="pl-[10px] flex flex-col justify-between">
+                            <div class="d-flex flex flex-wrap flex-row justify-between items-center">
+                                <h4 class="text-[16px] font-bold text-[#000]">Roberr Martin <span
+                                        class="ml-[5px] pl-[5px] text-[12px] text-[#777] font-normal">- 31 Oct
+                                        2023</span></h4>
+                                <div class="flex justify-end">
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                    <i class="ri-star-line text-sm text-custom-primary"></i>
+                                </div>
+                            </div>
+                            <p class="py-[10px]">This is the dolor sit amet consectetur adipisicing elit. Accusamus
+                                distinctio neque voluptates atque consequatur recusandae consectetur modi illum
+                                molestiae quam.</p>
+                            <a href="#"
+                                class="text-[13px] font-semibold font-Cardo text-[#000] hover:text-[#000] uppercase">Reply</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ld-blog-leave" data-aos="fade-up" data-aos-duration="1500">
+                    <h4 class="text-[22px] text-[#000] m-0 pb-[15px] leading-[28px] font-bold">Leave a Reply</h4>
+                    <div class="lh-blog-address pb-[24px]">
+                        <span>Your email address Will not be Published</span>
+                    </div>
+                    <form action="#">
+                        <div class="flex mb-[24px]">
+                            <textarea
+                                class="outline-0 h-[150px] w-full border-[1px] p-[12px] border-solid border-custom-bg rounded-[15px] bg-[#f7f5f1] pl-[20px] m-0"
+                                placeholder="Comment"></textarea>
+                        </div>
+                        <div class="flex mb-[24px]">
+                            <input type="text" name="fullname" placeholder="Full Name"
+                                class="outline-0 h-[50px] w-full border-[1px] border-solid border-custom-bg rounded-[15px] bg-[#f7f5f1] pl-[20px] ml-0 mt-0 mb-0 mr-[24px]"
+                                required>
+                            <input type="email" name="email" placeholder="Email"
+                                class="outline-0 h-[50px] w-full border-[1px] border-solid border-custom-bg rounded-[15px] bg-[#f7f5f1] pl-[20px] m-0"
+                                required>
+                        </div>
+                        <div class="lh-contact-touch-inner-form-button">
+                            <button
+                                class="duration-[0.3s] ease-in-out border-[1px] border-solid border-custom-primary px-[15px] py-[5px] leading-[28px] bg-custom-primary text-white relative z-[2] text-[15px] font-medium tracking-[1px] rounded-[10px] hover:bg-inherit hover:text-custom-primary"
+                                type="submit">
+                                Post Comment
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="lg:w-4/12 w-full px-[12px] mb-[24px]">
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1200">
+                    <div class="p-[24px]">
+                        <div class="flex justify-center pb-[15px]">
+                            <img src="{% static 'imgs/blog/busness-1.png' %}" alt="businessman"
+                                class="w-[100px] h-[100px] rounded-[100px]">
+                        </div>
+                        <div class="text-center">
+                            <span>Hr Manager</span>
+                            <h4 class="text-[18px] text-[#000] font-bold pb-[15px] m-0">Martyn Garcia</h4>
+                            <p>This is the dolor sit amet consectetur adipisicing elit. voluptatum.</p>
+                            <div class="pt-[15px] d-flex justify-center">
+                                <img src="{% static 'imgs/logo/facebook.png' %}" alt="facebook" class="w-[30px] mx-[2px]">
+                                <img src="{% static 'imgs/logo/twitter.png' %}" alt="twitter" class="w-[30px] mx-[2px]">
+                                <img src="{% static 'imgs/logo/instagram.png' %}" alt="instagram" class="w-[30px] mx-[2px]">
+                                <img src="{% static 'imgs/logo/linkedin.png' %}" alt="linkedin" class="w-[30px] mx-[2px]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1400">
+                    <form class="form-inline my-lg-0 d-flex">
+                        <input class="border-0 outline-0 bg-[#f7f5f1] pl-[24px] m-0 w-full h-[50px] rounded-[15px]"
+                            type="search" placeholder="Search here" aria-label="Search">
+                        <button type="button" class="pr-[24px]">
+                            <i class="ri-search-line"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1600">
+                    <div class="lh-our-blog-categories p-[24px]">
+                        <div class="border-b border-solid border-custom-bg pb-[24px]">
+                            <h4 class="text-[18px] text-[#000] font-bold capitalize">Categories</h4>
+                        </div>
+                        <ul>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Managment</p>
+                                    <span class="w-full flex justify-end">[02]</span>
+                                </a>
+                            </li>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Facilities</p>
+                                    <span class="w-full flex justify-end">[26]</span>
+                                </a>
+                            </li>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Events</p>
+                                    <span class="w-full flex justify-end">[33]</span>
+                                </a>
+                            </li>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Restaurant</p>
+                                    <span class="w-full flex justify-end">[85]</span>
+                                </a>
+                            </li>
+                            <li class="pt-[15px] flex items-center">
+                                <a href="#" class="w-full flex leading-5 items-center">
+                                    <code class="h-[5px] text-[18px] pr-[5px] text-custom-primary leading-[10px]">*</code>
+                                    <p class="w-full flex leading-5 items-center">Hotel Design</p>
+                                    <span class="w-full flex justify-end">[12]</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="1500">
+                    <div class="lh-our-blog-post p-[24px]">
+                        <div class="border-b border-solid border-custom-bg pb-[24px]">
+                            <h4 class="text-[18px] text-[#000] font-bold capitalize">Popular Post</h4>
+                        </div>
+                        <div class="pt-[24px]">
+                            <div class="flex flex-wrap flex-row">
+                                <img src="{% static 'imgs/blog/blog-1.png' %}" alt="blog_post-1"
+                                    class="w-[80px] h-[80px] rounded-[15px]">
+                                <div class="leading-5pl-[24px] flex flex-col w-[calc(100%_-_80px)] pl-[24px]">
+                                    <span>Feb 11,2023</span>
+                                    <a href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}"
+                                        class="text-[15px] font-medium leading-[23px] text-[#000] pt-[5px] hover:text-[#000]">Grandeur
+                                        Voted Top Will Three Hotel...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-[24px]">
+                            <div class="flex flex-wrap flex-row">
+                                <img src="{% static 'imgs/blog/blog-2.png' %}" alt="blog_post-2"
+                                    class="w-[80px] h-[80px] rounded-[15px]">
+                                <div class="leading-5pl-[24px] flex flex-col w-[calc(100%_-_80px)] pl-[24px]">
+                                    <span>May 22,2023</span>
+                                    <a href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}"
+                                        class="text-[15px] font-medium leading-[23px] text-[#000] pt-[5px] hover:text-[#000]">Enjoy
+                                        Your Vacation With Your Beloved Partner</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-[24px]">
+                            <div class="flex flex-wrap flex-row">
+                                <img src="{% static 'imgs/blog/blog-3.png' %}" alt="blog_post-3"
+                                    class="w-[80px] h-[80px] rounded-[15px]">
+                                <div class="leading-5pl-[24px] flex flex-col w-[calc(100%_-_80px)] pl-[24px]">
+                                    <span>Sep 09,2023</span>
+                                    <a href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}"
+                                        class="text-[15px] font-medium leading-[23px] text-[#000] pt-[5px] hover:text-[#000]">The
+                                        Best Hotels For Business Vacations</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="2000">
+                    <div class="lh-our-blog-tages p-[24px]">
+                        <div class="border-b border-solid border-custom-bg pb-[24px]">
+                            <h4 class="text-[18px] text-[#000] font-bold capitalize">Popular Tages</h4>
+                        </div>
+                        <div class="pt-[24px]">
+                            <ul class="p-0 m-[-5px] flex flex-wrap text-justify">
+                                <li class="float-left">
+                                    <a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-sm text-[#777] leading-[32px] inline-block">Entertainment</a>
+                                </li>
+                                <li class="float-left">
+                                    <a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-sm text-[#777] leading-[32px] inline-block">Booking</a>
+                                </li>
+                                <li class="float-left">
+                                    <a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-sm text-[#777] leading-[32px] inline-block">Gym</a>
+                                </li>
+                                <li class="float-left">
+                                    <a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-sm text-[#777] leading-[32px] inline-block">Hotel</a>
+                                </li>
+                                <li class="float-left">
+                                    <a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-sm text-[#777] leading-[32px] inline-block">Entertainment</a>
+                                </li>
+                                <li class="float-left">
+                                    <a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-sm text-[#777] leading-[32px] inline-block">Guests</a>
+                                </li>
+                                <li class="float-left">
+                                    <a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-sm text-[#777] leading-[32px] inline-block">Entertainment</a>
+                                </li>
+                                <li class="float-left">
+                                    <a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-sm text-[#777] leading-[32px] inline-block">Booking</a>
+                                </li>
+                                <li class="float-left">
+                                    <a href="#"
+                                        class="ease-in-out duration-[0.3s] hover:bg-custom-primary hover:text-white shadow-[0_0_5px_5px_rgba(0,0,0,0.03)] h-[32px] px-[20px] m-[5px] bg-white rounded-[5px] text-sm text-[#777] leading-[32px] inline-block">Gym</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh-our-blog bg-[#f7f5f1] mb-[24px] rounded-[15px]" data-aos="fade-up"
+                    data-aos-duration="2200">
+                    <div class="lh-our-blog-instagram p-[24px]">
+                        <div class="border-b border-solid border-custom-bg pb-[24px]">
+                            <h4 class="text-[18px] text-[#000] font-bold capitalize">instagram</h4>
+                        </div>
+                        <div class="lh-our-blog-instagram-image pt-[24px]">
+                            <div class="lh-our-blog-instagram-image-inner grid gap-[12px] relative">
+                                <a href="#"><img src="{% static 'imgs/instagram/1.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/2.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/3.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/4.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/5.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/6.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/7.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                                <a href="#"><img src="{% static 'imgs/instagram/8.png' %}" alt="instagram"
+                                        class="w-full h-full rounded-[15px]"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

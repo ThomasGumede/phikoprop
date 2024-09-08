@@ -1,0 +1,795 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #hero-section {
+        background-image: url("{% static 'imgs/hero/hero-section.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+</style>
+{% endblock styles %}
+{% block content %}
+    <!-- Hero -->
+    <section class="section-hero font-sans lg:pb-[50px] pb-[70px]">
+        <div id="hero-section"
+            class="flex flex-wrap flex-col justify-center px-3 hero-image md:h-[calc(100vh_-_100px)] sm:h-[80vh] min-[481px]:h-[580px] h-[500px] w-full bg-cover bg-bottom m-0 bg-blend-overlay bg-[#000000cc]">
+            <div class="flex flex-wrap w-full h-full">
+                <div class="relative w-full h-full">
+                    
+                    <div
+                        class="max-w-[830px] w-full lg:top-[50%] top-[53%] absolute left-[50%] z-1 text-center flex flex-wrap flex-col justify-center translate-x-[-50%] translate-y-[-50%]">
+                        <h4 class="max-w-[250px] m-auto font-Roboto relative text-white text-[16px] font-light"
+                            data-aos="fade-up" data-aos-duration="1000">
+                            <span
+                                class="py-side-border border border-solid border-custom-primary w-[50px] absolute top-[9px] left-[-60px] z-0"></span>
+                            Luxury Hotel & Best Resort
+                            <span
+                                class="py-side-border border border-solid border-custom-primary w-[50px] absolute top-[9px] right-[-60px] z-0"></span>
+                        </h4>
+                        <h1 class="my-[30px] font-Cardo wordspac_15 2xl:text-[48px] xl:text-[42px] lg:text-[38px] md:text-[35px] sm:text-[30px] text-[24px] md:leading-[1.2857em] sm:leading-[42px] leading-[36px] font-bold sm:tracking-[2px] tracking-[1px] uppercase text-white"
+                            data-aos="fade-up" data-aos-duration="1500">A Symphony of Comfort & Convenience.</h1>
+                            <button
+                                class="w-36 m-auto lg:w-40 h-12 border-2 border-custom-primary group bg-custom-primary hover:bg-transparent hover:border-white font-medium text-sm focus-within:outline-none focus:outline-none lg:text-base duration-500 rounded-md">
+                                <a href="{% url 'prop_home:prop-home' %}" class="hover:text-custom-primary text-white">
+                                    Room & suites
+                                </a>
+                            </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Room -->
+    <section class="section-room relative xl:py-[100px] py-[70px]" data-aos="fade-up" data-aos-duration="2000" id="rooms">
+        <div
+            class="2xl:before:w-[150px] xl:before:w-[130px] before:w-[80px] 2xl:before:h-[150px] dark-opicity-5 xl:before:h-[130px] before:h-[80px] bg-size-full before:absolute 2xl:before:top-[100px] before:top-0 2xl:before:right-[180px] xl:before:right-[50px] before:right-0 before:z-[-1] before:bg-[url('imgs/theme/1.png')]">
+        </div>
+        <div
+            class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] px-3">
+            <div class="text-center w-full mb-[30px]">
+                <h2
+                    class="text-black font-medium leading-[1.2] 2xl:text-[40px] xl:text-[35px] xl:pb-0 lg:text-[30px] md:text-[28px] sm:text-[26px] text-[22px]">
+                    Choose Your <span class="text-custom-primary">Room</span></h2>
+            </div>
+            <nav>
+                <div class="nav nav-tabs rooms lh-room border-0" id="nav-tab" role="tablist">
+                    <button
+                        class="mb-0 text-[20px] leading-[28px] text-black focus:text-black w-1/4 border-0 text-center nav-link active"
+                        id="nav-Deluxe-tab" data-bs-toggle="tab" data-bs-target="#nav-Deluxe" type="button" role="tab"
+                        aria-controls="nav-Deluxe" aria-selected="true">
+                        <img src="{% static 'imgs/room/1.png' %}" alt="1" class="w-full mb-[15px] rounded-[15px]">
+                        Double Room
+                    </button>
+                    <button
+                        class="mb-0 text-[20px] leading-[28px] text-black focus:text-black w-1/4 border-0 text-center nav-link"
+                        id="nav-Single-tab" data-bs-toggle="tab" data-bs-target="#nav-Single" type="button" role="tab"
+                        aria-controls="nav-Single" aria-selected="false">
+                        <img src="{% static 'imgs/room/2.png' %}" alt="2" class="w-full mb-[15px] rounded-[15px]">
+                        Triple Room
+                    </button>
+                    <button
+                        class="mb-0 text-[20px] leading-[28px] text-black focus:text-black w-1/4 border-0 text-center nav-link"
+                        id="nav-Super-tab" data-bs-toggle="tab" data-bs-target="#nav-Super" type="button" role="tab"
+                        aria-controls="nav-Super" aria-selected="false">
+                        <img src="{% static 'imgs/room/3.png' %}" alt="3" class="w-full mb-[15px] rounded-[15px]">
+                        Single Room
+                    </button>
+                    <button
+                        class="mb-0 text-[20px] leading-[28px] text-black focus:text-black w-1/4 border-0 text-center nav-link"
+                        id="nav-Presidential-tab" data-bs-toggle="tab" data-bs-target="#nav-Presidential" type="button"
+                        role="tab" aria-controls="nav-Presidential" aria-selected="false">
+                        <img src="{% static 'imgs/room/4.png' %}" alt="4" class="w-full mb-[15px] rounded-[15px]">
+                        Presidential Room
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content border border-solid border-custom-bg rounded-[15px] bg-white relative p-0 mt-[25px] overflow-hidden"
+                id="nav-tabContent">
+                <div class="tab-pane fade active show" id="nav-Deluxe" role="tabpanel" aria-labelledby="nav-Deluxe-tab">
+                    <div
+                        class="flex flex-wrap justify-between mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+                        <div class="xl:w-1/2 w-full px-3">
+                            <div class="lh-room-contain relative px-3 py-6">
+                                <div class="lh-contain-heading pb-[15px] flex justify-between">
+                                    <h4 class="xl:text-[22px] text-[18px] leading-[1.2] font-bold text-black text-left">
+                                        Double Room</h4>
+                                    <div class="lh-room-price">
+                                        <h4 class="xl:text-[22px] text-[18px] text-custom-primary font-bold leading-[22px]">
+                                            R650 /<span class="ml-[5px] text-[14px] font-normal text-custom-text">Per
+                                                month</span></h4>
+                                    </div>
+                                </div>
+                                <div class="lh-room-size d-flex flex-wrap">
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">1100 sq.ft <span
+                                            class="px-[15px]">|</span></p>
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">1 king Bed <span
+                                            class="px-[15px]">|</span></p>
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">Up to 4 Guest</p>
+                                </div>
+                                <p>This is the dolor sit amet consectetur adipisicing elit. Culpa necessitatibus
+                                    consequatur nostrum iure? Similique voluptatibus totam nobis exercitationem
+                                    perferendis id, cupiditate at et praesentium quas? Quae amet, magni suscipit
+                                    sequi.</p>
+                                <div class="lh-main-features border-t border-solid border-custom-bg pt-[30px] mt-[30px]">
+                                    <div class="lh-contain-heading pb-[15px] flex justify-between">
+                                        <h4
+                                            class="xl:text-[22px] text-[18px] leading-[1.2] font-bold text-black text-left">
+                                            Room Features</h4>
+                                    </div>
+                                    <div class="lh-room-features flex">
+                                        <div class="lh-cols-room">
+                                            <ul class="pl-4 mb-0">
+                                                <li class="text-sm text-custom-text leading-[1.2]">42 Inch flat screen TV
+                                                </li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">In-room Safe</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">Mini-refrigerator</li>
+                                            </ul>
+                                        </div>
+                                        <div class="lh-cols-room">
+                                            <ul class="pl-4 mb-0">
+                                                <li class="text-sm text-custom-text leading-[1.2]">Mini-refrigerator</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">Breakfast</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">complimeatary bottled
+                                                    water</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xl:w-1/2 w-full">
+                            <div class="room-img h-full w-full relative">
+                                <img src="{% static 'imgs/room/room-1.png' %}" alt="room-img" class="room-image h-full w-full">
+                                <a href="{% url 'rooms:room-details' room_slug='random-room' %}"
+                                    class="link w-[200px] h-[200px] absolute bottom-[-200px] right-[-200px] bg-[#000000cc] rounded-[50%]">
+                                    <i
+                                        class="ri-arrow-right-line absolute bottom-[100px] right-[100px] text-white text-[25px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-Single" role="tabpanel" aria-labelledby="nav-Single-tab">
+                    <div
+                        class="flex flex-wrap justify-between mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+                        <div class="xl:w-1/2 w-full px-3">
+                            <div class="lh-room-contain relative px-3 py-6">
+                                <div class="lh-contain-heading pb-[15px] flex justify-between">
+                                    <h4 class="xl:text-[22px] text-[18px] leading-[1.2] font-bold text-black text-left">
+                                        Triple Room</h4>
+                                    <div class="lh-room-price">
+                                        <h4 class="xl:text-[22px] text-[18px] text-custom-primary font-bold leading-[22px]">
+                                            R350 /<span class="ml-[5px] text-[14px] font-normal text-custom-text">Per
+                                                month</span></h4>
+                                    </div>
+                                </div>
+                                <div class="lh-room-size d-flex flex-wrap">
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">1200 sq.ft <span
+                                            class="px-[15px]">|</span></p>
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">1 king Bed <span
+                                            class="px-[15px]">|</span></p>
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">Up to 6 Guest</p>
+                                </div>
+                                <p>This is the dolor sit amet consectetur adipisicing elit. Culpa necessitatibus
+                                    consequatur nostrum iure? Similique voluptatibus totam nobis exercitationem
+                                    perferendis id, cupiditate at et praesentium quas? Quae amet, magni suscipit
+                                    sequi.</p>
+                                <div class="lh-main-features border-t border-solid border-custom-bg pt-[30px] mt-[30px]">
+                                    <div class="lh-contain-heading pb-[15px] flex justify-between">
+                                        <h4
+                                            class="xl:text-[22px] text-[18px] leading-[1.2] font-bold text-black text-left">
+                                            Room Features</h4>
+                                    </div>
+                                    <div class="lh-room-features flex">
+                                        <div class="lh-cols-room">
+                                            <ul class="pl-4 mb-0">
+                                                <li class="text-sm text-custom-text leading-[1.2]">42 Inch flat screen TV
+                                                </li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">In-room Safe</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">Mini-refrigerator</li>
+                                            </ul>
+                                        </div>
+                                        <div class="lh-cols-room">
+                                            <ul class="pl-4 mb-0">
+                                                <li class="text-sm text-custom-text leading-[1.2]">Mini-refrigerator</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">Breakfast</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">complimeatary bottled
+                                                    water</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xl:w-1/2 w-full">
+                            <div class="room-img h-full w-full relative">
+                                <img src="{% static 'imgs/room/room-2.png' %}" alt="room-img" class="room-image h-full w-full">
+                                <a href="{% url 'rooms:room-details' room_slug='random-room' %}"
+                                    class="link w-[200px] h-[200px] absolute bottom-[-200px] right-[-200px] bg-[#000000cc] rounded-[50%]">
+                                    <i
+                                        class="ri-arrow-right-line absolute bottom-[100px] right-[100px] text-white text-[25px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-Super" role="tabpanel" aria-labelledby="nav-Super-tab">
+                    <div
+                        class="flex flex-wrap justify-between mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+                        <div class="xl:w-1/2 w-full px-3">
+                            <div class="lh-room-contain relative px-3 py-6">
+                                <div class="lh-contain-heading pb-[15px] flex justify-between">
+                                    <h4 class="xl:text-[22px] text-[18px] leading-[1.2] font-bold text-black text-left">
+                                        Single Room</h4>
+                                    <div class="lh-room-price">
+                                        <h4 class="xl:text-[22px] text-[18px] text-custom-primary font-bold leading-[22px]">
+                                            R1000 /
+                                            <span class="ml-[5px] text-[14px] font-normal text-custom-text">Per month</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="lh-room-size d-flex flex-wrap">
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">1350 sq.ft <span
+                                            class="px-[15px]">|</span></p>
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">2 king Bed <span
+                                            class="px-[15px]">|</span></p>
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">Up to 8 Guest</p>
+                                </div>
+                                <p>This is the dolor sit amet consectetur adipisicing elit. Culpa necessitatibus
+                                    consequatur nostrum iure? Similique voluptatibus totam nobis exercitationem
+                                    perferendis id, cupiditate at et praesentium quas? Quae amet, magni suscipit
+                                    sequi.</p>
+                                <div class="lh-main-features border-t border-solid border-custom-bg pt-[30px] mt-[30px]">
+                                    <div class="lh-contain-heading pb-[15px] flex justify-between">
+                                        <h4
+                                            class="xl:text-[22px] text-[18px] leading-[1.2] font-bold text-black text-left">
+                                            Room
+                                            Features
+                                        </h4>
+                                    </div>
+                                    <div class="lh-room-features flex">
+                                        <div class="lh-cols-room">
+                                            <ul class="pl-4 mb-0">
+                                                <li class="text-sm text-custom-text leading-[1.2]">42 Inch flat screen TV
+                                                </li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">In-room Safe</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">Mini-refrigerator</li>
+                                            </ul>
+                                        </div>
+                                        <div class="lh-cols-room">
+                                            <ul class="pl-4 mb-0">
+                                                <li class="text-sm text-custom-text leading-[1.2]">Mini-refrigerator</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">Breakfast</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">complimeatary bottled
+                                                    water</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xl:w-1/2 w-full">
+                            <div class="room-img h-full w-full relative">
+                                <img src="{% static 'imgs/room/room-3.png' %}" alt="room-img" class="room-image h-full w-full">
+                                <a href="{% url 'rooms:room-details' room_slug='random-room' %}"
+                                    class="link w-[200px] h-[200px] absolute bottom-[-200px] right-[-200px] bg-[#000000cc] rounded-[50%]">
+                                    <i
+                                        class="ri-arrow-right-line absolute bottom-[100px] right-[100px] text-white text-[25px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-Presidential" role="tabpanel" aria-labelledby="nav-Presidential-tab">
+                    <div
+                        class="flex flex-wrap justify-between mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+                        <div class="xl:w-1/2 w-full px-3">
+                            <div class="lh-room-contain relative px-3 py-6">
+                                <div class="lh-contain-heading pb-[15px] flex justify-between">
+                                    <h4 class="xl:text-[22px] text-[18px] leading-[1.2] font-bold text-black text-left">
+                                        Presidential Room</h4>
+                                    <div class="lh-room-price">
+                                        <h4 class="xl:text-[22px] text-[18px] text-custom-primary font-bold leading-[22px]">
+                                            R1500 /
+                                            <span class="ml-[5px] text-[14px] font-normal text-custom-text">Per month</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="lh-room-size d-flex flex-wrap">
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">1500 sq.ft <span
+                                            class="px-[15px]">|</span></p>
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">2 king Bed <span
+                                            class="px-[15px]">|</span></p>
+                                    <p class="pb-[15px] text-[14px] text-custom-text leading-[1.2]">Up to 8 Guest</p>
+                                </div>
+                                <p>This is the dolor sit amet consectetur adipisicing elit. Culpa necessitatibus
+                                    consequatur nostrum iure? Similique voluptatibus totam nobis exercitationem
+                                    perferendis id, cupiditate at et praesentium quas? Quae amet, magni suscipit
+                                    sequi.</p>
+                                <div class="lh-main-features border-t border-solid border-custom-bg pt-[30px] mt-[30px]">
+                                    <div class="lh-contain-heading pb-[15px] flex justify-between">
+                                        <h4
+                                            class="xl:text-[22px] text-[18px] leading-[1.2] font-bold text-black text-left">
+                                            Room
+                                            Features
+                                        </h4>
+                                    </div>
+                                    <div class="lh-room-features flex">
+                                        <div class="lh-cols-room">
+                                            <ul class="pl-4 mb-0">
+                                                <li class="text-sm text-custom-text leading-[1.2]">42 Inch flat screen TV
+                                                </li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">In-room Safe</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">Mini-refrigerator</li>
+                                            </ul>
+                                        </div>
+                                        <div class="lh-cols-room">
+                                            <ul class="pl-4 mb-0">
+                                                <li class="text-sm text-custom-text leading-[1.2]">Mini-refrigerator</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">Breakfast</li>
+                                                <li class="text-sm text-custom-text leading-[1.2]">complimeatary bottled
+                                                    water</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xl:w-1/2 w-full">
+                            <div class="room-img h-full w-full relative">
+                                <img src="{% static 'imgs/room/room-4.png' %}" alt="room-img" class="room-image h-full w-full">
+                                <a href="{% url 'rooms:room-details' room_slug='random-room' %}"
+                                    class="link w-[200px] h-[200px] absolute bottom-[-200px] right-[-200px] bg-[#000000cc] rounded-[50%]">
+                                    <i
+                                        class="ri-arrow-right-line absolute bottom-[100px] right-[100px] text-white text-[25px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="2xl:after:w-[500px] lg:after:w-[400px] after:w-[300px] dark-opicity-1 2xl:after:h-[500px] xl:after:h-[400px] after:h-[300px] bg-size-full after:absolute 2xl:after:top-[100px] after:top-[75px] after:left-[-180px] after:z-[-1] after:bg-[url('imgs/theme/2.png')]">
+        </div>
+    </section>
+    
+    <!-- About -->
+    <section class="section-about bg-[#f7f5f1] relative xl:py-[100px] py-[70px]">
+        <div
+            class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] mb-[-24px]">
+            <div class="lg:w-1/2 w-full px-3 mb-[24px]" data-aos="fade-up" data-aos-duration="1500">
+                <img src="{% static 'imgs/about/about.png' %}" alt="about" class="w-100">
+            </div>
+            <div class="lg:w-1/2 w-full px-3 mb-[24px]" data-aos="fade-up" data-aos-duration="2000">
+                <div class="lh-about-detail h-full flex flex-col justify-center items-start">
+                    <div class="text-left w-full 2xl:mb-[30px] xl:mb-[20px]">
+                        <h2
+                            class="text-black font-medium leading-[1.2] 2xl:text-[40px] xl:text-[35px] xl:pb-0 lg:text-[30px] md:text-[28px] sm:text-[26px] text-[22px]">
+                            Find The Best City <span class="text-custom-primary">Branches</span></h2>
+                    </div>
+                    <div
+                        class="lh-branches-paragraph 2xl:pb-[30px] xl:pb-[25px] pb-[20px] 2xl:pt-[0] xl:pt-[10px] pt-[20px]">
+                        <p>This is the dolor sit amet consectetur adipisicing elit. Quasi eos ducimus magnam unde
+                            fugit qui perferendis repudiandae modi officia. Quae eaque fugiat minima quasi sapiente,
+                            vel dolore numquam quo!</p>
+                    </div>
+                    <div
+                        class="lh-branches p-[24px] flex border border-dashed border-black rounded-[15px] 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col">
+                        <div class="cols sm:mb-[0] mb-[24px]">
+                            <h4 class="mb-[15px] text-black xl:text-[20px] text-[18px] font-bold leading-[1.25]"><i
+                                    class="ri-arrow-right-up-line text-[18px] py-[10px] rotate-[42]"></i> Trusted
+                                Partners</h4>
+                            <p>This is the dolor sit amet consectetur adipisicing elit. Laborum, porro.</p>
+                        </div>
+                        <div class="cols">
+                            <h4 class="mb-[15px] text-black xl:text-[20px] text-[18px] font-bold leading-[1.25]"><i
+                                    class="ri-arrow-right-up-line text-[18px] py-[10px] rotate-[42]"></i> Laxury
+                                amenities</h4>
+                            <p>This is the dolor sit amet consectetur adipisicing elit. Laborum, porro.</p>
+                        </div>
+                    </div>
+                    <div class="flex mt-[30px]">
+                        <a class="m-auto duration-[0.3s] ease-in-out border border-solid border-custom-primary px-[15px] py-[5px] leading-[28px] bg-custom-primary text-white relative z-[2] text-sm font-medium tracking-[1px] rounded-[10px] hover:!border-custom-primary hover:bg-inherit hover:!text-custom-primary"
+                            href="{% url 'prop_home:about-us' %}">
+                            View More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Amenities -->
+    <section class="section-amenities relative xl:py-[100px] py-[70px]">
+        <div
+            class=" bg-size-full before:bg-no-repeat before:absolute before:lg:left-[-50px] before:md:left-[-6px] before:left-[10px] before:bottom-0 before:z-[-1] before:2xl:w-[260px] before:xl:w-[185px] before:md:w-[138px] before:w-[60px] before:2xl:h-[500px] before:xl:h-[350px] before:md:h-[275px] before:h-[120px]">
+        </div>
+        <div
+            class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] relative">
+            <div
+                class=" bg-size-full dark-opicity-5 before:bg-no-repeat before:absolute before:right-0 before:z-[-2] before:top-[-100px] before:w-[200px] before:h-[130px]">
+            </div>
+            <div class="text-center w-full mb-[30px]" data-aos="fade-up" data-aos-duration="2000">
+                <h2
+                    class="text-black font-medium leading-[1.2] 2xl:text-[40px] xl:text-[35px] xl:pb-0 lg:text-[30px] md:text-[28px] sm:text-[26px] text-[22px]">
+                    Amenities At <span class="text-custom-primary">Hotel</span>
+                </h2>
+            </div>
+            <div class="flex flex-wrap mb-[-24px]">
+                <div class="md:w-1/2 w-full px-3 mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="1500">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div class="amenities-box xl:w-6/12 xl:p-0 w-full p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/1.png' %}" alt="amenities_1"
+                                    class="w-full h-full xl:rounded-none rounded-[15px]">
+                            </div>
+                            <div
+                                class="amenities-box xl:w-6/12 xl:p-0 w-full px-[24px] pb-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0]">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0px] right-[0px] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        01</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-1.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-1">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Our Restaurant</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">
+                                            This is the dolor sit amet adipisicing elit. Ducimus corrupti sit amet
+                                            tempore placeat ipsa.</p>
+                                        <a href="{% url 'prop_home:facility' %}"
+                                            class="no-underline uppercase text-[12px] text-black font-bold hover:text-black">Read
+                                            more
+                                            <i
+                                                class="ri-arrow-right-line text-sm ml-[2px] duration-[0.2s] ease-in-out"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full px-3 mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="2000">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div class="amenities-box xl:w-6/12 xl:p-0 w-full p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/2.png' %}" alt="amenities_2"
+                                    class="w-full h-full xl:rounded-none rounded-[15px]">
+                            </div>
+                            <div
+                                class="amenities-box xl:w-6/12 xl:p-0 w-full px-[24px] pb-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0]">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0px] right-[0px] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        02</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-2.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-2">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Spa & Beauty</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">
+                                            This is the dolor sit amet adipisicing elit. Ducimus corrupti sit amet
+                                            tempore placeat ipsa.</p>
+                                        <a href="{% url 'prop_home:facility' %}"
+                                            class="no-underline uppercase text-[12px] text-black font-bold hover:text-black">Read
+                                            more
+                                            <i
+                                                class="ri-arrow-right-line text-sm ml-[2px] duration-[0.2s] ease-in-out"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full px-3 mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="1500">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div
+                                class="amenities-box xl:w-6/12 xl:p-0 w-full px-[24px] pt-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0] lh-amenities-right">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0px] right-[0px] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        03</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-4.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-3">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Golf & Garden</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">
+                                            This is the dolor sit amet adipisicing elit. Ducimus corrupti sit amet
+                                            tempore placeat ipsa.</p>
+                                        <a href="{% url 'prop_home:facility' %}"
+                                            class="no-underline uppercase text-[12px] text-black font-bold hover:text-black">Read
+                                            more
+                                            <i
+                                                class="ri-arrow-right-line text-sm ml-[2px] duration-[0.2s] ease-in-out"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="amenities-box xl:w-6/12 xl:p-0 w-full p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/3.png' %}" alt="amenities_3"
+                                    class="w-full h-full xl:rounded-none rounded-[15px]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full px-3 mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="2000">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div
+                                class="amenities-box xl:w-6/12 xl:p-0 w-full px-[24px] pt-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0] lh-amenities-right">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0px] right-[0px] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        04</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-3.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-4">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Fitness & Gym</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">
+                                            This is the dolor sit amet adipisicing elit. Ducimus corrupti sit amet
+                                            tempore placeat ipsa.</p>
+                                        <a href="{% url 'prop_home:facility' %}"
+                                            class="no-underline uppercase text-[12px] text-black font-bold hover:text-black">Read
+                                            more
+                                            <i
+                                                class="ri-arrow-right-line text-sm ml-[2px] duration-[0.2s] ease-in-out"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="amenities-box xl:w-6/12 xl:p-0 w-full p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/4.png' %}" alt="amenities_4"
+                                    class="w-full h-full xl:rounded-none rounded-[15px]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="after:bg-[url('imgs/theme/5.png')] dark-opicity-5 bg-size-full after:bg-no-repeat after:absolute after:right-0 after:bottom-[-60px] after:z-[-1] after:2xl:w-[175px] after:w-[120px] after:2xl:h-[150px] after:h-[120px]">
+        </div>
+    </section>
+    
+    <!-- Prices -->
+    <!-- <section class="section-prices bg-[#f7f5f1] xl:py-[100px] py-[70px]">
+        <div
+            class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+            <div class="text-center w-full mb-[30px]" data-aos="fade-up" data-aos-duration="1000">
+                <h2
+                    class="text-black font-medium leading-[1.2] 2xl:text-[40px] xl:text-[35px] xl:pb-0 lg:text-[30px] md:text-[28px] sm:text-[26px] text-[22px]">
+                    The Best <span class="text-custom-primary">Prices</span>
+                </h2>
+            </div>
+            <div class="lg:flex flex-wrap mb-[-24px] w-full">
+                <div class="lg:w-1/3 px-3 mb-[24px]">
+                    <div class="lh-prices bg-white rounded-[15px] pb-[24px]" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="{% static 'imgs/prices/1.png' %}" alt="prices_1" class="prices-image">
+                        <div class="lh-prices-out px-[24px]">
+                            <div class="lh-prices-in border-b border-solid border-custom-bg">
+                                <h4
+                                    class="lh-price-dollar py-[15px] xl:text-[60px] text-[50px] font-bold text-custom-primary leading-[40px]">
+                                    <span class="xl:text-[35px] xl:align-[18px] text-[20px] align-[20px]">R</span>450<code
+                                        class="xl:text-[16px] text-[14px] text-[#808384] leading-[1.2] font-light tracking-[0.01rem]"> / Per month</code>
+                                </h4>
+                                <h4
+                                    class="lh-prices-heading xl:pb-[20px] xl:text-[22px] leading-[1.2] font-bold pb-[15px] text-[18px] text-black m-0">
+                                    3 Share Room</h4>
+                            </div>
+                            <div class="lh-prices-viwe xl:pt-[20px] pt-sm">
+                                <ul class="p-0 mb-[16px]">
+                                    <li class="py-[8px] flex justify-between">
+                                        <span class="xl:text-sm text-[14px]">3 Beds & Wardropes</span>
+                                        <i class="ri-arrow-right-line flex justify-end text-[16px] rotate-[-35deg]"></i>
+                                    </li>
+                                    <li class="py-[8px] flex justify-between">
+                                        <span class="xl:text-sm text-[14px]">Safety & security</span>
+                                        <i class="ri-arrow-right-line flex justify-end text-[16px] rotate-[-35deg]"></i>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="price-buttons flex">
+                                <a class="duration-[0.3s] ease-in-out border border-solid border-custom-primary px-[15px] py-[5px] leading-[28px] bg-custom-primary text-white relative z-[2] text-sm font-medium tracking-[1px] rounded-[10px] hover:!border-custom-primary hover:bg-inherit hover:!text-custom-primary"
+                                    href="{% url 'prop_home:about-us' %}">
+                                    Book Now
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 px-3 mb-[24px]">
+                    <div class="lh-prices bg-white rounded-[15px] pb-[24px]" data-aos="fade-up" data-aos-duration="2000">
+                        <img src="{% static 'imgs/prices/2.png' %}" alt="prices_2" class="prices-image active">
+                        <div class="lh-prices-out px-[24px]">
+                            <div class="lh-prices-in border-b border-solid border-custom-bg">
+                                <h4
+                                    class="lh-price-dollar py-[15px] xl:text-[60px] text-[50px] font-bold text-custom-primary leading-[40px]">
+                                    <span class="xl:text-[35px] xl:align-[18px] text-[20px] align-[20px]">R</span>650<code
+                                        class="xl:text-[16px] text-[14px] text-[#808384] leading-[1.2] font-light tracking-[0.01rem]"> / Per month</code>
+                                </h4>
+                                <h4
+                                    class="lh-prices-heading xl:pb-[20px] xl:text-[22px] leading-[1.2] font-bold pb-[15px] text-[18px] text-black m-0">
+                                    2 Share Room</h4>
+                            </div>
+                            <div class="lh-prices-viwe xl:pt-[20px] pt-sm">
+                                <ul class="p-0 mb-[16px]">
+                                    <li class="py-[8px] flex justify-between">
+                                        <span class="xl:text-sm text-[14px]">2 Beds & Wardropes</span>
+                                        <i class="ri-arrow-right-line flex justify-end text-[16px] rotate-[-35deg]"></i>
+                                    </li>
+                                    <li class="py-[8px] flex justify-between">
+                                        <span class="xl:text-sm text-[14px]">Hot and Cold Shower</span>
+                                        <i class="ri-arrow-right-line flex justify-end text-[16px] rotate-[-35deg]"></i>
+                                    </li>
+                                    
+                                    <li class="py-[8px] flex justify-between">
+                                        <span class="xl:text-sm text-[14px]">Safety & security</span>
+                                        <i class="ri-arrow-right-line flex justify-end text-[16px] rotate-[-35deg]"></i>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="price-buttons flex">
+                                <a class="duration-[0.3s] ease-in-out border border-solid border-custom-primary px-[15px] py-[5px] leading-[28px] bg-custom-primary text-white relative z-[2] text-sm font-medium tracking-[1px] rounded-[10px] hover:!border-custom-primary hover:bg-inherit hover:!text-custom-primary"
+                                    href="{% url 'prop_home:about-us' %}">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 px-3 mb-[24px]">
+                    <div class="lh-prices bg-white rounded-[15px] pb-[24px]" data-aos="fade-up" data-aos-duration="3000">
+                        <img src="{% static 'imgs/prices/3.png' %}" alt="prices_3" class="prices-image">
+                        <div class="lh-prices-out px-[24px]">
+                            <div class="lh-prices-in border-b border-solid border-custom-bg">
+                                <h4
+                                    class="lh-price-dollar py-[15px] xl:text-[60px] font-bold text-[50px] text-custom-primary leading-[40px]">
+                                    <span class="xl:text-[35px] xl:align-[18px] text-[20px] align-[20px]">R</span>1000<code
+                                        class="xl:text-[16px] text-[14px] text-[#808384] leading-[1.2] font-light tracking-[0.01rem]"> / Per month</code>
+                                </h4>
+                                <h4
+                                    class="lh-prices-heading xl:pb-[20px] xl:text-[22px] leading-[1.2] font-bold pb-[15px] text-[18px] text-black m-0">
+                                    Single Room</h4>
+                            </div>
+                            <div class="lh-prices-viwe xl:pt-[20px] pt-sm">
+                                <ul class="p-0 mb-[16px]">
+                                    <li class="py-[8px] flex justify-between">
+                                        <span class="xl:text-sm text-[14px]">1 Bed & Cardboard</span>
+                                        <i class="ri-arrow-right-line flex justify-end text-[16px] rotate-[-35deg]"></i>
+                                    </li>
+                                    <li class="py-[8px] flex justify-between">
+                                        <span class="xl:text-sm text-[14px]">Fridge</span>
+                                        <i class="ri-arrow-right-line flex justify-end text-[16px] rotate-[-35deg]"></i>
+                                    </li>
+                                    <li class="py-[8px] flex justify-between">
+                                        <span class="xl:text-sm text-[14px]">Personal Shower</span>
+                                        <i class="ri-arrow-right-line flex justify-end text-[16px] rotate-[-35deg]"></i>
+                                    </li>
+                                    <li class="py-[8px] flex justify-between">
+                                        <span class="xl:text-sm text-[14px]">Safety & security</span>
+                                        <i class="ri-arrow-right-line flex justify-end text-[16px] rotate-[-35deg]"></i>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="price-buttons flex">
+                                <a class="duration-[0.3s] ease-in-out border border-solid border-custom-primary px-[15px] py-[5px] leading-[28px] bg-custom-primary text-white relative z-[2] text-sm font-medium tracking-[1px] rounded-[10px] hover:!border-custom-primary hover:bg-inherit hover:!text-custom-primary"
+                                    href="{% url 'prop_home:about-us' %}">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    
+    
+    <!-- Blog -->
+    <section class="section-blog bg-[#f7f5f1] xl:py-[100px] py-[70px]">
+        <div
+            class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px]">
+            <div class="text-center w-full mb-[30px]" data-aos="fade-up" data-aos-duration="2000">
+                <h2
+                    class="text-black font-medium leading-[1.2] 2xl:text-[40px] xl:text-[35px] xl:pb-0 lg:text-[30px] md:text-[28px] sm:text-[26px] text-[22px]">
+                    Stay Update With <span class="text-custom-primary">Us</span>
+                </h2>
+            </div>
+            <div class="slick-slider blog-slider my-0 lg:flex flex-wrap w-full">
+                <div class="blog-card mx-[12px] my-0">
+                    <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/2.png' %}" alt="blog-img"
+                            class="w-full rounded-[15px]"></figure>
+                    <div class="lh-blog flex flex-col justify-center">
+                        <div class="lh-blog-date py-[15px] leading-[15px]">
+                            <span class="text-[13px] font-Roboto"><code class="text-[16px] text-custom-primary">Restaurant</code>
+                                - 09 Jan 2023 - 05
+                                Comment</span>
+                        </div>
+                        <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                            href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Offers Exclusive amenities & Facilities To Guests and free
+                            offers.</a>
+                    </div>
+                </div>
+                <div class="blog-card mx-[12px] my-0">
+                    <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/3.png' %}" alt="blog-img"
+                            class="w-full rounded-[15px]"></figure>
+                    <div class="lh-blog flex flex-col justify-center">
+                        <div class="lh-blog-date py-[15px] leading-[15px]">
+                            <span class="text-[13px] font-Roboto"><code class="text-[16px] text-custom-primary">Marketing</code>
+                                - 15 Feb 2023 - 22
+                                Comment</span>
+                        </div>
+                        <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                            href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Announces A Private Island Hotel In The Maldives for couple.</a>
+                    </div>
+                </div>
+                <div class="blog-card mx-[12px] my-0">
+                    <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/4.png' %}" alt="blog-img"
+                            class="w-full rounded-[15px]"></figure>
+                    <div class="lh-blog flex flex-col justify-center">
+                        <div class="lh-blog-date py-[15px] leading-[15px]">
+                            <span class="text-[13px] font-Roboto"><code class="text-[16px] text-custom-primary">Hotel</code>
+                                - 22 Dec 2023 - 00 Comment</span>
+                        </div>
+                        <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                            href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Exclusive amenities Facilities to Guests Offers rooms free.</a>
+                    </div>
+                </div>
+                <div class="blog-card mx-[12px] my-0">
+                    <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/5.png' %}" alt="blog-img"
+                            class="w-full rounded-[15px]"></figure>
+                    <div class="lh-blog flex flex-col justify-center">
+                        <div class="lh-blog-date py-[15px] leading-[15px]">
+                            <span class="text-[13px] font-Roboto"><code class="text-[16px] text-custom-primary">Rooms</code>
+                                - 11 Nov 2023 - 01 Comment</span>
+                        </div>
+                        <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                            href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Island Hotel In The Maldives Exclusive amenities Facilities.</a>
+                    </div>
+                </div>
+                <div class="blog-card mx-[12px] my-0">
+                    <figure class="m-0 relative truncate"><img src="{% static 'imgs/blog/6.png' %}" alt="blog-img"
+                            class="w-full rounded-[15px]"></figure>
+                    <div class="lh-blog flex flex-col justify-center">
+                        <div class="lh-blog-date py-[15px] leading-[15px]">
+                            <span class="text-[13px] font-Roboto"><code class="text-[16px] text-custom-primary">Spa</code> -
+                                02 Mar 2023 - 25 Comment</span>
+                        </div>
+                        <a class="font-Cardo xl:text-[18px] text-[16px] xl:leading-[26px] lending-[24px] text-black mt-0 font-bold cursor-pointer hover:text-black"
+                            href="{% url 'prop_home:blog-details' blog_slug='some-blog-details' %}">Amenities Facilities to Guests Offers rooms free Exclusive.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

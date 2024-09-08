@@ -1,0 +1,247 @@
+{% load static %}
+<header>
+    <div class="relative">
+        <div
+            class="flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] px-[12px] lg:flex hidden">
+            <div class="w-1/2 py-[10px] flex">
+                <div class="pr-[15px] border-r border-solid border-custom-text">
+                    <i class="ri-mail-line mr-[5px] text-custom-primary text-[16px]"></i>
+                    phiko@prop.com
+                </div>
+                <div class="flex items-center pl-[15px] lh-location">
+                    <div class="flex items-center custom-select text-[14px] text-custom-text">
+                        <i class="ri-map-pin-line mr-[5px] text-custom-primary text-[16px]"></i>
+                        wc
+                    </div>
+                </div>
+            </div>
+            <div class="w-1/2 py-[10px] flex justify-end">
+                <div class="pr-[15px] border-r border-solid border-custom-text">
+                    <i class="ri-phone-line mr-[5px] text-custom-primary text-[16px]"></i>
+                    +27 66 340 9363
+                </div>
+                <div class="mx-[-5px] pl-[15px]">
+                    <a href="javascript:void(0)"><i
+                            class="ri-facebook-box-line facebook mx-[5px] text-[18px] text-[#3b5998]"></i></a>
+                    <a href="javascript:void(0)"><i
+                            class="ri-twitter-x-line twitter mx-[5px] text-[18px] text-[#03a9f4]"></i></a>
+                    <a href="javascript:void(0)"><i
+                            class="ri-linkedin-box-line linkedin mx-[5px] text-[18px] text-[#3b5998]"></i></a>
+                    <a href="javascript:void(0)"><i
+                            class="ri-instagram-line instagram mx-[5px] text-[18px] text-custom-primary"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lh-header bg-custom-h absolute w-full z-[16] py-[6px]">
+        <div
+            class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] px-[12px]">
+            <nav class="flex flex-nowrap w-full justify-between py-[3px]">
+                <a class="navbar-brand py-[5px]" href="{% url 'prop_home:prop-home' %}">
+                    <img src="{% static 'imgs/logo/logo.png' %}" alt="logo"
+                        class="xl:w-[180px] w-[160px] relative z-[2]">
+                </a>
+                
+                <div class=" w-fit items-center lg:flex hidden">
+                    <ul class="navbar-nav flex w-full relative z-[3] flex-row justify-end">
+                        <li class="ml-[30px] nav-item dropdown">
+                            <a class="py-[5px] text-[15px] text-white nav-link" href="{% url 'prop_home:prop-home' %}">
+                                Home
+                            </a>
+                        </li>
+                        <li class="ml-[30px] nav-item dropdown">
+                            <a class="py-[5px] text-[15px] text-white nav-link" href="{% url 'prop_home:about-us' %}">
+                                About
+                            </a>
+                        </li>
+                        <li class="ml-[30px] nav-item dropdown">
+                            <a class="py-[5px] text-[15px] text-white nav-link" href="{% url 'rooms:get-rooms' %}">
+                                Rooms
+                            </a>
+                        </li>
+                        <li class="ml-[30px] nav-item dropdown">
+                            <a class="py-[5px] text-[15px] text-white nav-link"
+                                href="{% url 'prop_home:get-blogs' %}">
+                                Blogs
+                            </a>
+                        </li>
+                        <li class="ml-[30px] nav-item dropdown">
+                            <a class="py-[5px] text-[15px] text-white nav-link" href="{% url 'prop_home:contact-us' %}">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex items-center gap-4 lg:gap-0">
+                    <div id="profile">
+                        {% if request.user.is_authenticated %}
+                        <div class="w-fit flex items-center space-x-5">
+                            <div x-data="{ isOpen: false }" class="relative inline-block ">
+                                <!-- Dropdown toggle button -->
+                                <button @click="isOpen = !isOpen"
+                                    class="relative z-10 flex items-center w-10 h-10 rounded-full   bg-white border border-transparent focus:border-blue-500 focus:ring-opacity-40  focus:ring-blue-300  focus:ring  focus:outline-none">
+                                    {% if request.user.profile_image %}
+                                    <div class="text-white rounded-full overflow-hidden">
+                                        <img src="{{request.user.profile_image.url}}" alt="{{request.user.get_full_name}}"
+                                            class="w-10 h-10 rounded-full object-cover">
+                                    </div>
+                                    {% else %}
+                                    <div href="" class="text-white rounded-full overflow-hidden">
+                                        <i class="fa-solid fa-user fa-xl"></i>
+                                    </div>
+                                    {% endif %}
+                    
+                                </button>
+                    
+                                <!-- Dropdown menu -->
+                                <div x-cloak x-show="isOpen" @click.away="isOpen = false"
+                                    x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-90"
+                                    x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-100"
+                                    x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
+                                    class="absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden origin-top-right bg-white rounded-md shadow-xl ">
+                                    <a href="{% url 'accounts:user-details' request.user.username %}"
+                                        class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform  hover:bg-gray-100 ">
+                                        {% if request.user.profile_image %}
+                                        <img class="flex-shrink-0 object-cover mx-1 rounded-full w-9 h-9"
+                                            src="{{request.user.profile_image.url}}" alt="{{request.user.get_full_name}} avatar">
+                                        {% else %}
+                                        <img class="flex-shrink-0 object-cover mx-1 rounded-full w-9 h-9"
+                                            src="{% static 'images/global/no-image-available.webp' %}"
+                                            alt="{{request.user.get_full_name}} avatar">
+                                        {% endif %}
+                                        <div class="mx-1 w-full">
+                                            <h5 class="text-sm font-semibold text-gray-700 ">
+                                                {{request.user.get_full_name}}</h5>
+                                            <p class="text-sm text-gray-500 ">
+                                                {{request.user.get_username}}
+                                            </p>
+                                        </div>
+                                    </a>
+                    
+                                    <hr class="border-gray-200  ">
+                    
+                                    <a href="{% url 'prop_home:get-dashboard' request.user.username %}"
+                                        class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform  hover:bg-gray-100 ">
+                                        Dashboard
+                                    </a>
+                                    <a href=""
+                                        class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform  hover:bg-gray-100 ">
+                                        Settings
+                                    </a>
+                    
+                    
+                                    {% if request.user.is_superuser or request.user.is_staff %}
+                    
+                                    <a href="{% url 'admin:index' %}"
+                                        class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform  hover:bg-gray-100">
+                                        Admin
+                                    </a>
+                                    
+                    
+                    
+                                    <hr class="border-gray-200  ">
+                    
+                                    <a href="{% url 'rooms:create-room' %}"
+                                        class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform  hover:bg-gray-100">
+                                        Add Room
+                                    </a>
+                    
+                                    
+                                    {% endif %}
+                    
+                                    <hr class="border-gray-200  ">
+                    
+                                    <a href="{% url 'accounts:logout' %}"
+                                        class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform  hover:bg-gray-100">
+                                        Sign Out
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="w-fit flex items-center space-x-5">
+                            <div x-data="{ isOpen: false }" class="relative inline-block ">
+                                <!-- Dropdown toggle button -->
+                                <button @click="isOpen = !isOpen"
+                                    class="relative z-10 flex items-center w-10 h-10 rounded-full  justify-center bg-white border border-transparent focus:border-blue-500 focus:ring-opacity-40  focus:ring-blue-300  focus:ring  focus:outline-none">
+                    
+                                    <div class="text-black rounded-full text-center overflow-hidden">
+                                        <i class="fa-solid fa-user fa-xl"></i>
+                                    </div>
+                    
+                    
+                                </button>
+                    
+                                <!-- Dropdown menu -->
+                                <div x-cloak x-show="isOpen" @click.away="isOpen = false"
+                                    x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-90"
+                                    x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-100"
+                                    x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
+                                    class="absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden origin-top-right bg-white rounded-md shadow-xl ">
+                    
+                    
+                                    <a href="{% url 'accounts:login' %}"
+                                        class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform  hover:bg-gray-100 ">
+                                        Sign in
+                                    </a>
+                                    <a href="{% url 'accounts:register' %}"
+                                        class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform  hover:bg-gray-100 ">
+                                        Register
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <button
+                        class="navbar-toggler shadow-none basis-[auto] grow items-center text-[24px] text-white lg:hidden flex justify-end"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#" aria-label="Toggle navigation">
+                        <i class="ri-menu-2-line"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile-menu -->
+<div class="lh-sidebar-overlay hidden w-full h-screen fixed top-0 left-0 bg-[#000000b3] z-[17]"></div>
+<div id="lh_mobile_menu"
+    class="lh-side-cart lh-mobile-menu transition-all duration-[0.5s] ease w-[300px] h-full fixed left-[-300px] bg-white overflow-y-auto z-[20] p-[15px]">
+    <div class="w-full flex flex-wrap justify-between border-b-2 border-solid border-[#e3e1e1] pb-[10px] mb-[10px]">
+        <span class="text-[18px] text-custom-primary font-semibold">My Menu</span>
+        <button type="button"
+            class="lh-close relative border-0 text-[30px] leading-[1px] text-[#999] bg-white">×</button>
+    </div>
+    <div class="lh-menu-inner flex flex-col justify-between">
+
+        <div class="lh-menu-content">
+            <ul>
+                <li class="dropdown drop-list leading-[28px]">
+                    <a href="{% url 'prop_home:prop-home' %}"
+                        class="block capitalize text-[15px] font-normal text-custom-h hover:text-custom-h no-underline border-b border-solid border-[#e3e1e1] p-[10px]">Home</a>
+                </li>
+                <li class="dropdown drop-list leading-[28px]">
+                    <a href="{% url 'prop_home:about-us' %}"
+                        class="block capitalize text-[15px] font-normal text-custom-h hover:text-custom-h no-underline border-b border-solid border-[#e3e1e1] p-[10px]">About</a>
+                </li>
+                <li class="dropdown drop-list leading-[28px]">
+                    <a href="{% url 'prop_home:prop-home' %}"
+                        class="block capitalize text-[15px] font-normal text-custom-h hover:text-custom-h no-underline border-b border-solid border-[#e3e1e1] p-[10px]">Rooms</a>
+                </li>
+                <li class="dropdown drop-list leading-[28px]">
+                    <a href="{% url 'prop_home:contact-us' %}"
+                        class="block capitalize text-[15px] font-normal text-custom-h hover:text-custom-h no-underline border-b border-solid border-[#e3e1e1] p-[10px]">Contact
+                        us</a>
+                </li>
+                {% if not request.user.is_authenticated %}
+                <li class="dropdown drop-list leading-[28px]">
+                    <a href="{% url 'accounts:login' %}"
+                        class="block capitalize text-[15px] font-normal text-custom-h hover:text-custom-h no-underline border-b border-solid border-[#e3e1e1] p-[10px]">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

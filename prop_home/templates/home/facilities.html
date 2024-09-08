@@ -1,0 +1,251 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #hero-section {
+        background-image: url("{% static 'imgs/about/about-banner.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+
+    #bout-bg::before {
+        background-image: url("{% static 'imgs/theme/6.png' %}");
+    }
+
+    #about-bg-2::before {
+        background-image: url("{% static 'imgs/theme/1.png' %}");
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<!-- Banner -->
+<section class="section-banner">
+    <div id="hero-section"
+        class="banner-image flex flex-wrap w-full justify-center sm:h-[400px] h-[300px] m-0 bg-cover bg-bottom">
+        <div class="w-full sm:h-[400px] h-[300px] absolute bg-[#000000bf]"></div>
+        <div class="flex items-center justify-center text-center z-2">
+            <div class="mt-[65px]">
+                <h2
+                    class="mb-3 2xl:text-[40px] xl:text-[38px] lg:text-[36px] md:text-[34px] sm:text-[30px] text-[28px] font-bold">
+                    Contact Us</h2>
+                <h5 class="text-[16px]">
+                    <span>
+                        <a href="{% url 'prop_home:prop-home' %}" class="text-white hover:text-white">Home</a>
+                    </span>
+                    <span class="font-bold"> / </span>
+                    <span>
+                        <a href="javascript:void(0)" class="text-white hover:text-white">Contact Us</a>
+                    </span>
+                </h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Amenities -->
+    <section class="section-amenities relative xl:py-[100px] py-[70px]">
+        <div
+            class=" bg-size-full before:bg-no-repeat before:absolute before:lg:left-[-50px] before:md:left-[-6px] before:left-[10px] before:bottom-0 before:z-[-1] before:2xl:w-[260px] before:xl:w-[185px] before:md:w-[138px] before:w-[60px] before:2xl:h-[500px] before:xl:h-[350px] before:md:h-[275px] before:h-[120px]">
+        </div>
+        <div
+            class="flex flex-wrap justify-between items-center mx-auto 2xl:max-w-[1320px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] relative">
+            <div
+                class="bg-size-full before:bg-no-repeat dark-opicity-5 before:absolute before:right-0 before:z-[-2] before:top-[-100px] before:w-[200px] before:h-[130px]">
+            </div>
+            <div class="flex flex-wrap mb-[-24px]">
+                <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="1500">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div class="amenities-box xl:w-[50%] xl:p-0 w-[100%] p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/1.png' %}" alt="amenities_1"
+                                    class="w-full h-full xl:rounded-none rounded-[15px]">
+                            </div>
+                            <div
+                                class="amenities-box xl:w-[50%] xl:p-0 w-[100%] px-[24px] pb-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0]">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        01</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-1.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-1">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Our Restaurant</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">This is the dolor sit amet
+                                            adipisicing elit. Ducimus corrupti sit amet tempore placeat ipsa. This is the
+                                            dolor sit amet adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="2000">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div class="amenities-box xl:w-[50%] xl:p-0 w-[100%] p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/2.png' %}" alt="amenities_2"
+                                    class="w-full h-full 2xl:rounded-none xl:rounded-none rounded-[15px]">
+                            </div>
+                            <div
+                                class="amenities-box xl:w-[50%] xl:p-0 w-[100%] px-[24px] pb-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0]">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        02</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-2.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-2">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Spa & Beauty</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">This is the dolor sit amet
+                                            adipisicing elit. Ducimus corrupti sit amet tempore placeat ipsa. This is the
+                                            dolor sit amet adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="1500">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div
+                                class="amenities-box xl:w-[50%] xl:p-0 w-[100%] px-[24px] pt-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0] lh-amenities-right">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        03</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-4.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-3">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Golf & Garden</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">This is the dolor sit amet
+                                            adipisicing elit. Ducimus corrupti sit amet tempore placeat ipsa. This is the
+                                            dolor sit amet adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="amenities-box xl:w-[50%] xl:p-0 w-[100%] p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/3.png' %}" alt="amenities_3"
+                                    class="w-full h-full xl:rounded-none rounded-[15px]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="2000">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div
+                                class="amenities-box xl:w-[50%] xl:p-0 w-[100%] px-[24px] pt-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0] lh-amenities-right">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        04</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-3.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-4">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Fitness & Gym</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">This is the dolor sit amet
+                                            adipisicing elit. Ducimus corrupti sit amet tempore placeat ipsa. This is the
+                                            dolor sit amet adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="amenities-box xl:w-[50%] xl:p-0 w-[100%] p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/4.png' %}" alt="amenities_4"
+                                    class="w-full h-full xl:rounded-none rounded-[15px]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="1500">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div class="amenities-box xl:w-[50%] xl:p-0 w-[100%] p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/5.png' %}" alt="amenities_5"
+                                    class="w-full h-full 2xl:rounded-none xl:rounded-none rounded-[15px]">
+                            </div>
+                            <div
+                                class="amenities-box xl:w-[50%] xl:p-0 w-[100%] px-[24px] pb-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0]">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        05</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-5.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-5">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Swimming Pool</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">This is the dolor sit amet
+                                            adipisicing elit. Ducimus corrupti sit amet tempore placeat ipsa. This is the
+                                            dolor sit amet adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full px-[12px] mb-[24px]">
+                    <div class="lh-amenities shadow-[0_0_50px_0_rgba(0,0,0,0.1)] flex rounded-[15px] bg-white overflow-hidden"
+                        data-aos="fade-up" data-aos-duration="2000">
+                        <div class="amenities-detail flex flex-wrap xl:flex-row flex-col">
+                            <div class="amenities-box xl:w-[50%] xl:p-0 w-[100%] p-[24px] flex items-center justify-center">
+                                <img src="{% static 'imgs/amenities/6.png' %}" alt="amenities_6"
+                                    class="w-full h-full xl:rounded-none rounded-[15px]">
+                            </div>
+                            <div
+                                class="amenities-box xl:w-[50%] xl:p-0 w-[100%] px-[24px] pb-[24px] flex items-center justify-center">
+                                <div class="lh-amenities-in relative xl:p-[24px] px-[0]">
+                                    <h4
+                                        class="side-number absolute xl:top-[24px] xl:right-[24px] top-[0] right-[0] text-[55px] font-extrabold leading-[55px] text-[#0000000d]">
+                                        06</h4>
+                                    <div class="lh-top-dish pb-[15px]">
+                                        <img src="{% static 'imgs/amenities/amenities-dish-6.svg' %}"
+                                            class="svg-img w-[50px] h-[50px]" alt="amenities-dish-6">
+                                    </div>
+                                    <div class="amenities-contain">
+                                        <h4
+                                            class="amenities-heading xl:text-[22px] text-[18px] font-bold text-black leading-[1.2]">
+                                            Our Parking</h4>
+                                        <p class="text-[14px] lg:py-[15px] md:py-[10px] py-[5px]">This is the dolor sit amet
+                                            adipisicing elit. Ducimus corrupti sit amet tempore placeat ipsa. This is the
+                                            dolor sit amet adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class=" bg-size-full after:bg-no-repeat dark-opicity-5 after:absolute after:right-0 after:bottom-[-60px] after:z-[-1] after:2xl:w-[175px] after:w-[120px] after:2xl:h-[150px] after:h-[120px]">
+        </div>
+    </section>
+{% endblock content %}
