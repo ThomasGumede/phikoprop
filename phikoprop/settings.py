@@ -29,11 +29,11 @@ DEBUG = False
 AUTH_USER_MODEL = 'accounts.Account'
 AUTHENTICATION_BACKENDS = ['accounts.utilities.backends.EmailBackend']
 LOGIN_URL = 'accounts:login'
-ADMINS = [('admin@wedodev.site'),( 'support@wedodev.site'), ('gumedethomas12@gmail.com') ]
-MANAGERS = [('admin@wedodev.site'), ('support@wedodev.site'), ('gumedethomas12@gmail.com') ]
+ADMINS = [('admin@phanserv.co.za'),( 'support@phanserv.co.za'), ('gumedethomas12@gmail.com') ]
+MANAGERS = [('admin@phanserv.co.za'), ('support@phanserv.co.za'), ('gumedethomas12@gmail.com') ]
 
 # Security
-CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1', 'https://localhost', 'https://wedodev.site', 'https://www.wedodev.site']
+CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1', 'https://localhost', 'https://phanserv.co.za', 'https://www.phanserv.co.za']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ['security.W019']
@@ -52,7 +52,7 @@ else:
     SECURE_HSTS_PRELOAD = True
 
     # Allowed Hosts
-    ALLOWED_HOSTS = ['wedodev.site', 'www.wedodev.site']
+    ALLOWED_HOSTS = ['phanserv.co.za', 'www.phanserv.co.za']
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
@@ -207,4 +207,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True  
 EMAIL_HOST_USER = 'technical@bbgi.co.za'
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = 'noreply@bbgi.co.za'
+DEFAULT_FROM_EMAIL = 'noreply@phanserv.co.za'
