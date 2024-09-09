@@ -18,10 +18,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Best Phiko Hotel Booking Template.">
-    <meta name="keywords"
-        content="hotel, booking, business, restaurant, spa, resort, landing, agency, corporate, start up, site design, new business site, business template, professional template, classic, modern">
-    <title>Phiko - Hotel Booking.</title>
+    {% block seo_tags %}
+    <title>PP - Best place to stay</title>
+    <meta name="description"
+        content="Discover Phiko Properties, your ideal choice for convenient and comfortable rental housing near high schools. Our two well-maintained buildings are strategically located to offer..">
+    <meta name="title" content="Phiko Properties -  Best place to stay" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://phikoproperties.co.za" />
+    <meta property="og:title" content="BBGI - Best place to stay" />
+    <meta property="og:description"
+        content="Discover Phiko Properties, your ideal choice for convenient and comfortable rental housing near high schools. Our two well-maintained buildings are strategically located to offer.." />
+    <meta property="og:image" content="https://phikoproperties.co.za{% static 'imgs/logo/logo.png' %}" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://phikoproperties.co.za" />
+    <meta property="twitter:title" content="BBGI - Best place to stay" />
+    <meta property="twitter:description"
+        content="Discover Phiko Properties, your ideal choice for convenient and comfortable rental housing near high schools. Our two well-maintained buildings are strategically located to offer.." />
+    <meta property="twitter:image" content="https://phikoproperties.co.za{% static 'imgs/logo/logo.png' %}" />
+    {% endblock seo_tags %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -47,6 +64,7 @@
     <link rel="icon" href="{% static 'imgs/favicons/favicon-32x32.png' %}" sizes="32x32">
     <link rel="icon" href="{% static 'imgs/favicons/android-chrome-192x192.png' %}" sizes="192x192">
     <link rel="apple-touch-icon" href="{% static 'imgs/apple-touch-icon.png' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
