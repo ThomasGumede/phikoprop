@@ -145,21 +145,22 @@ def register(request):
     template_name = "accounts/register.html"
     success_url = "accounts:success"
     if request.method == "POST":
-        form = RegistrationForm(request.POST, request.FILES)
-        if form.is_valid() and form.is_multipart():
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
             user = form.save(commit=False)
-            user.is_active = True
+            user.is_active = False
             user.save()
-            # send_verification_email(user, request)
-            # messages.success(
-            #     request,
-            #     f"Dear {user}, please go to you email {user.email} inbox and click on \
-            #         received activation link to confirm and complete the registration. Note: Check your spam folder.",
-            # )
-            # return redirect(success_url)
-            messages.success(request, "You have successfully register with us")
-            return redirect("accounts:login")
+            send_verification_email(user, request)
+            messages.success(
+                request,
+                f"Dear {user}, please go to you email {user.email} inbox and click on \
+                    received activation link to confirm and complete the registration. Note: Check your spam folder.",
+            )
+            print(form)
+            return redirect(success_url)
+            
         else:
+            print(form.errors)
             messages.error(request, "Something went wrong while signing up")
             return render(
                 request=request, template_name=template_name, context={"form": form}

@@ -17,13 +17,13 @@
                 </div>
                 <div class="px-16 mb-4">
                     {% for field in form %}
-                    {% if field.errors %}
-                    <li class="text-md font-bold text-red-500 text-sm">{{field.label}}: {{field.errors.as_text}}</li>
-                    {% endif %}
+                        {% if field.errors %}
+                        <li class="text-md font-bold text-red-500 text-sm">{{field.label}}: {{field.errors.as_text}}</li>
+                        {% endif %}
                     {% endfor %}
                     {% if form.non_field_errors %}
 
-                    <li class="text-md font-bold text-red-500 text-sm">Form error: {{form.non_field_errors.as_text}}
+                    <li class="text-md font-bold text-red-500 text-sm">{{form.non_field_errors.as_text}}
                     </li>
 
                     {% endif %}

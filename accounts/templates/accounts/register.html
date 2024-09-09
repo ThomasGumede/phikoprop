@@ -29,11 +29,11 @@
                     Sign up</h2>
                 <h5 class="text-[16px]">
                     <span>
-                        <a href="{% url 'prop_home:prop-home' %}" class="text-[#fff] hover:text-[#fff]">Home</a>
+                        <a href="{% url 'prop_home:prop-home' %}" class="text-white hover:text-white">Home</a>
                     </span>
                     <span class="font-bold"> / </span>
                     <span>
-                        <a href="javascript:void(0)" class="text-[#fff] hover:text-[#fff]">Sign up</a>
+                        <a href="javascript:void(0)" class="text-white hover:text-white">Sign up</a>
                     </span>
                 </h5>
             </div>
@@ -56,12 +56,11 @@
                 </a>
 
                 <h2 class="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                    Welcome to BBGI
+                    Welcome to Phiko Properties
                 </h2>
 
                 <p class="mt-4 leading-relaxed text-white/90">
-                    The Black Business Growth Initiative supports Black African businesses and careers by providing a unified platform for
-                    entrepreneurs and professionals to showcase their expertise and promote unity and cooperation.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium eligendi nisi vero repellat odit, rerum facilis placeat quae quasi consequuntur, quidem saepe, alias ipsam harum reiciendis molestiae nostrum illum ea?
                 </p>
             </div>
         </section>
@@ -76,7 +75,7 @@
                     </a>
 
                     <h1 class="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-                        Welcome to Phiko Prop
+                        Welcome to Phiko Properties
                     </h1>
 
                     <p class="mt-4 leading-relaxed text-gray-500">
@@ -86,31 +85,7 @@
 
                 <form method="post" class="mt-8 grid grid-cols-6 gap-6">
                     {% csrf_token %}
-                    <div class="col-span-6">
-                        <label for="id_profile_image" class="block text-sm font-medium text-gray-700">
-                            Profile picture
-                        </label>
-                        <input type="file" name="profile_image" accept="image/*" id="id_profile_image"
-                            class="w-[0.1px] h-[0.1px] opacity-0 overflow-hidden absolute -z-[1]" />
-                        <div class="w-full border rounded-md bg-white border-dotted p-2">
-                            <div class="flex items-center flex-col md:flex-row gap-4 w-full justify-between">
-                                <div class="flex items-center space-x-4">
-                                    <div id="img_container" class="h-16 w-20 overflow-hidden rounded bg-gray-300">
-                                        <div id="no_image"></div>
-                                    </div>
-                                    <div class="space-y-1">
-                                        <p class="text-xs font-bold text-gray-500">Upload your profile
-                                            picture</p>
-                                        <p class="text-xs font-light text-gray-500">SVG, PNG,
-                                            JPG, JPEG or GIF</p>
-                                    </div>
-                                </div>
-                                <div id="pick_image" class="border p-2 cursor-pointer text-center text-black">
-                                    <p class="text-sm">Browser</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-span-6">
                         <label for="Email" class="block text-sm font-medium text-gray-700"> Username </label>
                         {{form.username}}
@@ -200,203 +175,5 @@
 {% block js %}
 
 
-<script>
-
-    const file_picker = document.querySelector("#id_profile_image"),
-        pick_image = document.querySelector("#pick_image"),
-        register_form = document.querySelector("#register_form"),
-        email = document.querySelector("#id_email"),
-        confirm_email = document.querySelector("#id_confirm_email"),
-        confirm_email_error = document.querySelector("#confirm_email_error")
-
-    pick_image.addEventListener('click', () => {
-        file_picker.click()
-    })
-
-
-    file_picker.onchange = ({target}) => {
-        const no_image = document.querySelector("#no_image");
-        const img_container = document.querySelector("#img_container")
-        const img = document.querySelector("#img")
-        const file = target.files[0]
-        if (file) {
-            // console.log(no_image)
-            if (no_image) {
-                // console.log(img_container)
-
-                img_container.removeChild(no_image);
-                img_container.innerHTML += `
-                    <img
-                        src="${window.URL.createObjectURL(file)}"
-                        alt="{{request.user.first_name}}"
-                        class="w-full h-full object-cover"
-                        id="img"
-                    />
-                `
-            } else {
-                img.src = window.URL.createObjectURL(file)
-            }
-
-        } else {
-            alert("no file selected")
-        }
-
-    };
-
-    var max_words = 150;
-
-    $("textarea[name=biography]").on("keyup", function () {
-        var str = $(this).val();
-        if (str.split(/[\s]+/).length > max_words) {
-            alert("You cannot put more than" + max_words + " words in this text area.")
-            var new_str = str.split(/[\s]+/).splice(0, max_words).join(' ');
-            $(this).val(new_str);
-        }
-    })
-
-    confirm_email.addEventListener("keyup", function (e) {
-        e.preventDefault();
-        console.log(email.value)
-        if (confirm_email.value !== email.value) {
-            if (confirm_email_error.classList.contains("hidden")) {
-                confirm_email_error.classList.remove("hidden");
-                confirm_email_error.classList.add("block");
-            }
-        } else {
-            if (confirm_email_error.classList.contains("block")) {
-                confirm_email_error.classList.remove("block");
-                confirm_email_error.classList.add("hidden");
-            }
-        }
-    })
-</script>
-<script>
-    "use strict";
-
-    function initMap() {
-
-        const CONFIGURATION = {
-            "ctaTitle": "Checkout",
-            "mapOptions": {"center": {"lat": -33.918861, "lng": 18.423300}, "fullscreenControl": true, "mapTypeControl": false, "streetViewControl": true, "zoom": 11, "zoomControl": true, "maxZoom": 22, "mapId": ""},
-            "capabilities": {"addressAutocompleteControl": true, "mapDisplayControl": true, "ctaControl": true}
-        };
-
-        const componentForm = [
-            'location',
-            'locality',
-            'administrative_area_level_1',
-            'country',
-            'postal_code',
-        ];
-
-
-        const getFormInputElement = (component) => document.getElementById(component + '-input');
-        const autocompleteInput = document.getElementById('id_address_one');
-        const provinceInput = document.getElementById('id_province');
-        const cityInput = document.getElementById('id_city');
-        const zipcodeInput = document.getElementById('id_zipcode');
-        const addressTwoInput = document.getElementById('id_address_two');
-
-        const map = new google.maps.Map(document.getElementById("gmp-map-account"), {
-            zoom: CONFIGURATION.mapOptions.zoom,
-            center: {lat: -33.918861, lng: 18.423300},
-            mapTypeControl: true,
-            fullscreenControl: CONFIGURATION.mapOptions.fullscreenControl,
-            zoomControl: CONFIGURATION.mapOptions.zoomControl,
-            streetViewControl: CONFIGURATION.mapOptions.streetViewControl
-        });
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                position => {
-                    const clientLocation = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-                    map.setCenter(clientLocation);
-                    const marker = new google.maps.Marker({position: clientLocation, map: map, draggable: false});
-                    const geocoder = new google.maps.Geocoder();
-                    geocoder.geocode({location: clientLocation}, (results, status) => {
-                        if (status === 'OK') {
-                            fillInAddress(results[0]);
-                        } else {
-                            alert("Sorry, we couldn't find address suggestion for your current location")
-                        }
-                    })
-                },
-                () => {
-
-                }
-            )
-        }
-
-        const marker = new google.maps.Marker({map: map, draggable: false});
-        google.maps.event.addListener(map, 'click', (event) => {
-            marker.setPosition(event.latLng);
-            const geocoder = new google.maps.Geocoder();
-            geocoder.geocode({location: event.latLng}, (results, status) => {
-                if (status === 'OK') {
-                    console.log(results)
-                    fillInAddress(results[0]);
-                } else {
-                    alert("Sorry, we couldn't find address suggestions for your location")
-                }
-            })
-        })
-        const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
-            fields: ["place_id", "address_components", "geometry", "name"],
-            types: ["address"],
-        });
-
-        autocomplete.setComponentRestrictions(
-            {'country': ['za']});
-
-        autocomplete.addListener('place_changed', function () {
-
-            const place = autocomplete.getPlace();
-            if (!place.geometry) {
-                window.alert('No details available for input: \'' + place.name + '\'');
-                return;
-            }
-            console.log(place)
-            renderAddress(place);
-            fillInAddress(place);
-        });
-
-        function fillInAddress(place) {
-            const addressNameFormat = {
-                'street_number': 'short_name',
-                'route': 'long_name',
-                'locality': 'long_name',
-                'administrative_area_level_1': 'short_name',
-                'country': 'long_name',
-                'postal_code': 'short_name',
-            };
-            const getAddressComp = function (type) {
-                for (const component of place.address_components) {
-                    if (component.types[0] === type) {
-                        return component[addressNameFormat[type]];
-                    }
-                }
-                return '';
-            };
-
-            autocompleteInput.value = getAddressComp('route')
-            addressTwoInput.value = getAddressComp('street_number')
-            provinceInput.value = getAddressComp('administrative_area_level_1')
-            cityInput.value = getAddressComp('locality')
-            zipcodeInput.value = getAddressComp('postal_code')
-        }
-
-        function renderAddress(place) {
-            map.setCenter(place.geometry.location);
-            marker.setPosition(place.geometry.location);
-            marker.setVisible(true);
-        }
-    }
-</script>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1vMyd0KzU7mTn_AkMW3zd2V4cJC9w31I&libraries=places&callback=initMap&solution_channel=GMP_QB_addressselection_v1_cAC"
-    async defer></script>
 
 {% endblock js %}

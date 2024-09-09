@@ -30,7 +30,7 @@ def send_html_email(subject, to_email, template_name, context):
 
 # def custom_send_email(to_email, subject, html_content):
 #     message = Mail(
-#         from_email='Black Business Growth Initiative <noreply@bbgi.co.za>',
+#         from_email='Black Business Growth Initiative <noreply@Phiko Properties.co.za>',
 #         to_emails=to_email,
 #         subject=subject,
 #         html_content=html_content,
@@ -77,7 +77,7 @@ def send_html_email(subject, to_email, template_name, context):
 
 def send_email_confirmation_email(user, new_email, request):
     try:
-        mail_subject = "BBGI | New Email Confirmation"
+        mail_subject = "Phiko Properties | New Email Confirmation"
         message = render_to_string("emails/account/email_activation.html",
                 {
                     "user": user.get_full_name(),
@@ -113,7 +113,7 @@ def send_email_confirmation_email(user, new_email, request):
 def send_verification_email(user, request):
         
         try:
-            mail_subject = "BBGI | Activate Account"
+            mail_subject = "Phiko Properties | Activate Account"
             message = render_to_string("emails/account/account_activate_email.html",
                 {
                     "user": user.get_full_name(),
@@ -147,7 +147,7 @@ def send_verification_email(user, request):
 
 def send_password_reset_email(user, request):
     try:
-        mail_subject = "BBGI | Password Reset request"
+        mail_subject = "Phiko Properties | Password Reset request"
         message = render_to_string("emails/password/reset_password_email.html", {
             'user': user.get_full_name(),     
             'uid': urlsafe_base64_encode(force_bytes(user.pk)),
